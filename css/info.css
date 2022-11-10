@@ -1,0 +1,24 @@
+.info-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 0 100px;
+    box-sizing: border-box;
+    margin-top: 200px;
+}
+
+.info-left {
+    /* padding: 50px 50px 50px 0 */
+}
+
+.info-left button {
+    margin-top: 30px;
+}
+
+.info-text {
+    color: var(--text-color)
+}
+
+.info-image {
+    max-width: 100%;
+}

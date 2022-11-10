@@ -1,0 +1,33 @@
+@font-face {
+    font-family: Mulish;
+    src: url('fonts/Mulish-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+    --main-color: #458FF6;
+    --text-color: #7D7987;
+    --highlight-color: #DFEDFD;
+}
+
+body {
+    margin: 0;
+    font-family: "Mulish";
+    background-image: url("../images/background.svg");
+}
+
+.filled-button {
+    width: 150px;
+    height: 35px;
+    border-radius: 55px;
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+}
+
+.unfilled-button {
+    width: 150px;
+    height: 35px;
+    border-radius: 55px;
+    border: solid var(--main-color);
+    color: var(--main-color);
+}

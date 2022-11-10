@@ -1,0 +1,37 @@
+.top-nav {
+    display: grid;
+    position: fixed;
+    grid-template-columns: 1fr 1fr;
+    top: 0;
+    left: 0;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    padding: 0 100px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo-img {
+    height: 30px;
+    width: 30px;
+}
+
+.logo-text {
+    align-self: center;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-links a {
+    text-decoration: none;
+}

@@ -1,0 +1,38 @@
+.velg-tjenester-section {
+    padding: 0 100px;
+}
+
+.tjenester-card-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* margin-top: 50px; */
+    justify-content: flex-start;
+}
+
+.checkbox-card {
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    width: 300px;
+    max-width: 300px;
+    background-color: var(--highlight-color);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.checkbox-card-icon {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+}
+
+.checkbox-icon {
+    width: 40px;
+    height: 40px;
+    align-self: flex-end;
+}
+
+.checkbox-card-text {
+    line-height: 1.5;
+    color: var(--text-color)
+}
