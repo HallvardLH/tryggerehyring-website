@@ -3,7 +3,7 @@
  * {
  *      name: "",
  *      information: "",
- *      services: "",
+ *      services: [],
  *      attachments: [{
  *          name: "",
  *          data: ""
@@ -14,6 +14,6 @@
 let candidates = [{
     name: "Navn",
     information: "Lorem ipsum...",
-    services: "",
+    services: [],
     attachments: []
 }]

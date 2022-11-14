@@ -1,9 +1,9 @@
-function fileSelectorAddEventListener(id, index) {
+function attachmentAddEventListener(id, candidateIndex) {
     document.getElementById(id).addEventListener("change", async (event) => {
         let attachments = event.target.files;
-        candidates[index].attachments = [];
+        candidates[candidateIndex].attachments = [];
         for (let i = 0; i < attachments.length; i++) {
-            candidates[index].attachments.push({
+            candidates[candidateIndex].attachments.push({
                 name: attachments[i].name,
                 data: await toBase64(attachments[i])
             });
