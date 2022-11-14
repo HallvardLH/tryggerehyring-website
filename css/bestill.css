@@ -1,5 +1,5 @@
-.velg-tjenester-section {
-    padding: 0 100px;
+.velg-tjenester-section, .informasjon-kandidat-section {
+    padding: 0 100px 50px 100px;
 }
 
 .tjenester-card-section {
@@ -35,4 +35,68 @@
 .checkbox-card-text {
     line-height: 1.5;
     color: var(--text-color)
+}
+
+
+/* Informasjon om kandidaten */
+
+.kandidat-table {
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr 1fr 1fr;
+    box-sizing: border-box;
+    /* gap: 15px; */
+}
+
+.table-top {
+    background-color: var(--highlight-color);
+    padding: 10px;
+}
+/* .kandidat-table-top, .kandidat-table-content {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+} */
+
+.kandidat-table-content {
+    border-bottom: solid var(--main-color) 2px;
+    padding: 10px;
+    line-height: 1.8;
+    min-height: 50px;
+    /* background-color: white; */
+}
+ 
+.kandidat-name-input, .kandidat-info-input {
+    border: none;
+    font-family: "Mulish";
+}
+
+.kandidat-info-input {
+    border-bottom: solid var(--main-color) 2px;
+    resize: none;
+}
+
+.kandidat-name-input:focus, .kandidat-info-input:focus, .sammendrag-input:focus {
+    outline: none;
+    border-bottom: solid var(--main-color)
+}
+
+.kandidat-table-content input[type=file] {
+    display: none;
+}
+
+#file-input {
+    width: 150px;
+}
+
+.kandidat-table-content label, .fjern-kandidat {
+    color: var(--main-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sammendrag-input {
+    border: none;
+    font-size: 18px;
+    border-bottom: solid transparent;
+    font-weight: 600;
 }

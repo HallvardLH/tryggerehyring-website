@@ -55,7 +55,7 @@
                 <div class="checkbox-card-text">Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.</div>
                 <img class="checkbox-icon" src="images/checkbox-unchecked.svg"/>
             </div>
-            
+
             <div class="checkbox-card">
                 <h3>Utdanning</h3>
                 <img class="checkbox-card-icon" src="images/search-icon.svg"/>
@@ -76,5 +76,63 @@
             </div>
         </div>
     </div>
+
+    <div class="informasjon-kandidat-section">
+        <h1 class="info-header">
+            Informasjon om kandidaten
+        </h1>
+        <div class="separator"></div>
+        <div class="kandidat-table" id="kandidat-table">
+                <div class="table-top" style="border-top-left-radius: 25px"><b>Navn*</b></div>
+                <div class="table-top"><b>Ytterlig informasjon</b></div>
+                <div class="table-top"><b>Dokument</b></div>
+                <div class="table-top"><b>Tjenester</b></div>
+                <div class="table-top" style="border-top-right-radius: 25px"><b>Fjern kandidat</b></div>
+                <div class="kandidat-table-content">
+                    <input class="kandidat-name-input" type="text" placeholder="Skriv inn navn"/>
+                </div>
+                    <textarea class="kandidat-info-input kandidat-table-content" type="text" placeholder="Skriv inn ytterlig informasjon"></textarea>
+                <div class="kandidat-table-content">
+                    CV - Ola Nordmann.pdf <br/>
+                    Chess.com Attest.docx <br/>
+                    <label for="file-input">
+                        Last opp dokument
+                        <input id="file-input" type="file"/>
+                    </label>
+                </div>
+                <div class="kandidat-table-content">
+
+                </div>
+                <div class="kandidat-table-content">
+                    <div class="fjern-kandidat">
+                        Fjern kandidat
+                    </div>
+                </div>
+        </div>
+        <button onclick="bestill.new_table_row()" class="unfilled-button" style="border-radius: 15px; margin-top: 30px">
+            Legg til kandidat
+        </button>
+    </div>
+    <div class="info-section" style="margin-top: 30px;">
+        <div class="info-left">
+            <h1 class="info-header">
+                Sammendrag
+            </h1>
+            <div class="separator"></div>
+            <p class="sammendrag-small-text">Skriv inn ditt navn eller navnet på bedriften her:*</p>
+            <input class="sammendrag-input" type="text" placeholder="Navn Etternavn"/>
+            <p class="sammendrag-small-text">Vi sender ut faktura sammen med rapporten til mailen under:*</p>
+            <input class="sammendrag-input" type="text" placeholder="din-epost@bedrift.no"/>
+            <p class="sammendrag-small-text">Prisen for alle rapportene blir:</p>
+            <div class="sammendrag-big-text">4299 NOK</div>
+            <button onclick="" class="filled-button" style="border-radius: 15px;">
+                Bestill
+            </button>
+        </div>
+        <div class="info-right">
+            <img class="info-image" src="images/generic-image-5.svg" />
+        </div>
+    </div>
 </body>
+<script src="js/bestill.js"></script>
 </html>
