@@ -61,6 +61,10 @@ let services = {
     }
 }
 
+/**
+ * 
+ * @param {int} candidateIndex The index used to identify the candidate in the order page table
+ */
 function serviceCheckBoxAddEventListener(candidateIndex) {
     Object.keys(services).forEach(function(key) {
         document.getElementById(services[key].name).addEventListener("change", async (event) => {

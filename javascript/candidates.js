@@ -19,6 +19,9 @@ let candidates = [{
     attachments: []
 }]
 
+/**
+ * Sets the price value for each candidate based on the service array.
+ */
 function updatePriceEstimates() {
     for (let i = 0; i < candidates.length; i++) {
         let price = 0
@@ -27,5 +30,4 @@ function updatePriceEstimates() {
         }
         candidates[i].price = price
     }
-    console.log(candidates)
 }

@@ -1,3 +1,8 @@
+/**
+ * Adds an event listener to a file input. Used for attaching files.
+ * @param {string} id ID of the HTML file input
+ * @param {int} candidateIndex The index used to identify the candidate in the order page table
+ */
 function attachmentAddEventListener(id, candidateIndex) {
     document.getElementById(id).addEventListener("change", async (event) => {
         let attachments = event.target.files;
