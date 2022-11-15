@@ -39,10 +39,18 @@ function removeCandidate(index) {
 }
 
 function addNewCandidate() {
+    let services_ = [];
+
+    Object.keys(services).forEach(function(key) {
+        if (document.getElementById(`${services[key].name}-checkbox`).src.includes("images/checkbox-checked.svg")) {
+            services_.push(services[key].name);
+        }
+    });
+
     candidates.push({
         name: "",
         information: "",
-        services: [],
+        services: services_,
         price: 0,
         attachments: []
     })

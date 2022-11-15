@@ -82,11 +82,17 @@ let services = {
 function serviceCheckBox(candidateIndex, name) {
     let checked = false;
     if (candidateIndex == null) {
+        let atLeastOne = false;
         for (let i = 0; i < candidates.length; i++) {
-            if (!candidates[i].services.includes(services[name].name)) {
+            if (candidates[i].services.includes(services[name].name)) {
+                atLeastOne = true;
+            }
+        }
+        for (let i = 0; i < candidates.length; i++) {
+            if (!candidates[i].services.includes(services[name].name) && !atLeastOne) {
                 candidates[i].services.push(services[name].name)
                 checked = true;
-            } else {
+            } else if (atLeastOne) {
                 candidates[i].services = removeItemAll(candidates[i].services, services[name].name)
                 checked = false;
             }
