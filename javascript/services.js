@@ -65,9 +65,9 @@ let services = {
  * 
  * @param {int} candidateIndex The index used to identify the candidate in the order page table
  */
-function serviceCheckBoxAddEventListener(candidateIndex) {
+/*function serviceCheckBoxAddEventListener(candidateIndex) {
     Object.keys(services).forEach(function(key) {
-        document.getElementById(services[key].name).addEventListener("change", async (event) => {
+        document.getElementById(services[key].name).addEventListener("change", async () => {
             if (!candidates[candidateIndex].services.includes(services[key].name)) {
                 candidates[candidateIndex].services.push(services[key].name)
             } else {
@@ -77,6 +77,60 @@ function serviceCheckBoxAddEventListener(candidateIndex) {
             updatePriceEstimates()
         });
     });
+}*/
+
+function serviceCheckBox(candidateIndex, name) {
+    let checked = false;
+    if (candidateIndex == null) {
+        for (let i = 0; i < candidates.length; i++) {
+            if (!candidates[i].services.includes(services[name].name)) {
+                candidates[i].services.push(services[name].name)
+                checked = true;
+            } else {
+                candidates[i].services = removeItemAll(candidates[i].services, services[name].name)
+                checked = false;
+            }
+        }
+        updateCheckbox(name, checked, "");
+    } else {
+        if (!candidates[candidateIndex].services.includes(services[name].name)) {
+            candidates[candidateIndex].services.push(services[name].name)
+            checked = true;
+        } else {
+            candidates[candidateIndex].services = removeItemAll(candidates[candidateIndex].services, services[name].name)
+            checked = false;
+        }
+        updateCheckbox(name, checked, "-modal");
+        
+        let included = 0
+        for (let i = 0; i < candidates.length; i++) {
+            if (candidates[i].services.includes(name)) {
+                included++;
+            }
+        }
+
+        if (included == candidates.length) {
+            checked = 1;
+        } else if (included == 0) {
+            checked = 0;
+        } else {
+            checked = 2;
+        }
+        updateCheckbox(name, checked, "");
+    }
+
+    updatePriceEstimates()
+    bestill.create_all_rows();
+}
+
+function updateCheckbox(name, checked, modal) {
+    if(checked == true) {
+        document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-checked.svg";
+    } else if (checked == false) {
+        document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-unchecked.svg";
+    } else {
+        document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-minus.svg";
+    }
 }
 
 /**

@@ -10,13 +10,8 @@
     <link href="css/info.css" rel="stylesheet" type="text/css">
     <link href="css/offers.css" rel="stylesheet" type="text/css">
     <link href="css/bestill.css" rel="stylesheet" type="text/css">
-    
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="javascript/helper_functions.js" type="text/javascript" defer></script>
-    <script src="javascript/services.js" type="text/javascript" defer></script>
-    <script src="javascript/candidates.js" type="text/javascript" defer></script>
-    <script src="javascript/email.js" type="text/javascript" defer></script>
-    <script src="javascript/attachments.js" type="text/javascript" defer></script>
+    <link href="css/modal.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
     <div class="top-nav">
@@ -55,33 +50,7 @@
             Velg tjenester
         </h1>
         <div class="separator"></div>
-        <div class="tjenester-card-section">
-            <div class="checkbox-card">
-                <h3>Arbeid</h3>
-                <img class="checkbox-card-icon" src="images/search-icon.svg"/>
-                <div class="checkbox-card-text">Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.</div>
-                <img class="checkbox-icon" src="images/checkbox-unchecked.svg"/>
-            </div>
-
-            <div class="checkbox-card">
-                <h3>Utdanning</h3>
-                <img class="checkbox-card-icon" src="images/search-icon.svg"/>
-                <div class="checkbox-card-text">Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.</div>
-                <img class="checkbox-icon" src="images/checkbox-unchecked.svg"/>
-            </div>
-            <div class="checkbox-card">
-                <h3>Sertifikat</h3>
-                <img class="checkbox-card-icon" src="images/search-icon.svg"/>
-                <div class="checkbox-card-text">Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.</div>
-                <img class="checkbox-icon" src="images/checkbox-unchecked.svg"/>
-            </div>
-            <div class="checkbox-card">
-                <h3>Mediesøk</h3>
-                <img class="checkbox-card-icon" src="images/search-icon.svg"/>
-                <div class="checkbox-card-text">Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.</div>
-                <img class="checkbox-icon" src="images/checkbox-unchecked.svg"/>
-            </div>
-        </div>
+        <div class="tjenester-card-section" id="tjenester-card-section"></div>
     </div>
 
     <div class="informasjon-kandidat-section">
@@ -95,30 +64,45 @@
                 <div class="table-top"><b>Dokument</b></div>
                 <div class="table-top"><b>Tjenester</b></div>
                 <div class="table-top" style="border-top-right-radius: 25px"><b>Fjern kandidat</b></div>
-                <div class="kandidat-table-content">
-                    <input class="kandidat-name-input" type="text" placeholder="Skriv inn navn"/>
-                </div>
-                    <textarea class="kandidat-info-input kandidat-table-content" type="text" placeholder="Skriv inn ytterlig informasjon"></textarea>
-                <div class="kandidat-table-content">
-                    CV - Ola Nordmann.pdf <br/>
-                    Chess.com Attest.docx <br/>
-                    <label for="file-input">
-                        Last opp dokument
-                        <input id="file-input" type="file"/>
-                    </label>
-                </div>
-                <div class="kandidat-table-content">
-
-                </div>
-                <div class="kandidat-table-content">
-                    <div class="fjern-kandidat">
-                        Fjern kandidat
-                    </div>
-                </div>
         </div>
-        <button onclick="bestill.new_table_row()" class="unfilled-button" style="border-radius: 15px; margin-top: 30px">
+        <button onclick="addNewCandidate()" class="unfilled-button" style="border-radius: 15px; margin-top: 30px">
             Legg til kandidat
         </button>
+    </div>
+    <div class="modal" id="service-selection-modal">
+        <div class="modal-content">
+            <div>
+                <h1>
+                    Tjenester for kandidaten
+                </h1>
+                <div class="separator"></div>
+                <div class="service-selection-container" id="service-selection-container">
+                    <!-- <div class="modal-service-option">
+                        <img class="modal-service-icon" src="images/search-icon.svg" />
+                        <div id="VARIABLE">Arbeid</div>
+                        <img class="modal-checkbox" src="images/checkbox-unchecked.svg" />
+                    </div>
+                    <div class="modal-service-option">
+                        <img class="modal-service-icon" src="images/search-icon.svg" />
+                        <div id="VARIABLE">Arbeid</div>
+                        <img class="modal-checkbox" src="images/checkbox-unchecked.svg" />
+                    </div> -->
+                </div>
+            </div>
+            <span onclick="closeModal('service-selection-modal')" class="close">&times;</span>
+        </div>
+    </div>
+    <div class="modal" id="order-confrmation-modal">
+        <div class="modal-content">
+            <div>
+                <h1 style="font-size: 1.2rem;">Takk for din bestilling!</h1>
+                <p class="info-text">
+                    En bekreftelsese-post har blitt sendt til din-epost@bedrift.no. Om du ønsker å legge til informasjon, kan du svare på denne e-posten eller ta kontakt via kontakt-skjemeat. Vennligst oppgi bestillingsnummeret ved framtidige hendvendelser:
+                </p>
+                <h2>#28503</h2>
+            </div>
+            <span onclick="closeModal('order-confrmation-modal')" class="close">&times;</span>
+        </div>
     </div>
     <div class="info-section" style="margin-top: 30px;">
         <div class="info-left">
@@ -141,5 +125,12 @@
         </div>
     </div>
 </body>
-<script src="js/bestill.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="javascript/helper_functions.js" type="text/javascript"></script>
+<script src="javascript/services.js" type="text/javascript"></script>
+<script src="javascript/candidates.js" type="text/javascript"></script>
+<script src="javascript/email.js" type="text/javascript"></script>
+<script src="javascript/attachments.js" type="text/javascript"></script>
+<script src="javascript/bestill.js" type="text/javascript"></script>
+<script src="javascript/modal.js" type="text/javascript"></script>
 </html>

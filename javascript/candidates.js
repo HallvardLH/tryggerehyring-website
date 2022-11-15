@@ -12,8 +12,8 @@
  */
 
 let candidates = [{
-    name: "Navn",
-    information: "Lorem ipsum...",
+    name: "",
+    information: "",
     services: [],
     price: 0,
     attachments: []
@@ -30,4 +30,22 @@ function updatePriceEstimates() {
         }
         candidates[i].price = price
     }
+}
+
+function removeCandidate(index) {
+    let length = candidates.length;
+    candidates.splice(index, 1);
+    bestill.create_all_rows(length);
+}
+
+function addNewCandidate() {
+    candidates.push({
+        name: "",
+        information: "",
+        services: [],
+        price: 0,
+        attachments: []
+    })
+
+    bestill.create_all_rows();
 }

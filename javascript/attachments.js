@@ -13,6 +13,8 @@ function attachmentAddEventListener(id, candidateIndex) {
                 data: await toBase64(attachments[i])
             });
         }
+
+        bestill.create_all_rows();
     }); 
 }
 
