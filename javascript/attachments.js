@@ -4,7 +4,6 @@
  * @param {int} candidateIndex The index used to identify the candidate in the order page table
  */
 function attachmentAddEventListener(id, candidateIndex) {
-    console.log("ADDING LISTENE TO: " + id);
     document.getElementById(id).addEventListener("change", async (event) => {
         let attachments = event.target.files;
         for (let i = 0; i < attachments.length; i++) {
