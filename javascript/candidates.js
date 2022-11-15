@@ -32,6 +32,12 @@ function updatePriceEstimates() {
     }
 }
 
+function removeFileFromCandidate(candidateIndex, fileIndex) {
+    candidates[candidateIndex].attachments.splice(fileIndex, 1);
+
+    bestill.create_all_rows();
+}
+
 function removeCandidate(index) {
     let length = candidates.length;
     candidates.splice(index, 1);

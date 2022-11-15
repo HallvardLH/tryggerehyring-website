@@ -36,8 +36,6 @@ const bestill = {
         </div>
         `
         element.innerHTML += content;
-
-        attachmentAddEventListener(`${fileInputID}-${index}`, index);
     },
 
     create_all_rows: function(length) {
@@ -54,6 +52,11 @@ const bestill = {
         }
         for (let i = 0; i < candidates.length; i++) {
             this.new_table_row(i);
+        }
+
+        for (let i = 0; i < candidates.length; i++) {
+            fileInputID = `file-input-${i}`;
+            attachmentAddEventListener(`${fileInputID}-${i}`, i);
         }
     },
 
