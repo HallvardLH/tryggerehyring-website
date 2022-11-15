@@ -101,4 +101,17 @@
     font-size: 18px;
     border-bottom: solid transparent;
     font-weight: 600;
+    background: transparent;
+}
+
+.upload-document-grid {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    column-gap: 10px;
+}
+
+.bestill-button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
 }

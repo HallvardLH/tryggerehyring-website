@@ -111,14 +111,17 @@
             </h1>
             <div class="separator"></div>
             <p class="sammendrag-small-text">Skriv inn ditt navn eller navnet på bedriften her:*</p>
-            <input class="sammendrag-input" type="text" placeholder="Navn Etternavn"/>
+            <input class="sammendrag-input" id="summary-name-input" type="text" placeholder="Navn Etternavn"/>
             <p class="sammendrag-small-text">Vi sender ut faktura sammen med rapporten til mailen under:*</p>
-            <input class="sammendrag-input" type="text" placeholder="din-epost@bedrift.no"/>
+            <input class="sammendrag-input" id="summary-email-input" type="text" placeholder="din-epost@bedrift.no"/>
             <p class="sammendrag-small-text">Prisen for alle rapportene blir:</p>
-            <div class="sammendrag-big-text">4299 NOK</div>
-            <button onclick="" class="filled-button" style="border-radius: 15px;">
-                Bestill
-            </button>
+            <div class="sammendrag-big-text" id="price-estimate-display">0 NOK</div>
+            <div class="bestill-button-grid">
+                <button onclick="order()" class="filled-button" style="border-radius: 15px;">
+                    Bestill
+                </button>
+                <div id="bestill-error-message"></div>
+            </div>
         </div>
         <div class="info-right">
             <img class="info-image" src="images/generic-image-5.svg" />
@@ -133,4 +136,5 @@
 <script src="javascript/attachments.js" type="text/javascript"></script>
 <script src="javascript/bestill.js" type="text/javascript"></script>
 <script src="javascript/modal.js" type="text/javascript"></script>
+<script src="javascript/order.js" type="text/javascript"></script>
 </html>

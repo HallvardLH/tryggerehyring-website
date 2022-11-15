@@ -2,7 +2,12 @@ const bestill = {
     new_table_row: function(index) {
         let attachments = "";
         for (let i = 0; i < candidates[index].attachments.length; i++) {
-            attachments += candidates[index].attachments[i].name + "<br />";
+            let characterLimit = 20;
+            let fileName = candidates[index].attachments[i].name;
+            if (fileName.length > 20) {
+                fileName = fileName.substring(0, characterLimit - 3) + "...";
+            }
+            attachments += `${fileName}<ins class="highlighted-underlined" onclick="removeFileFromCandidate(${index},${i})">Slett</ins>`;
         }
 
         let servicesString= "";
@@ -19,7 +24,9 @@ const bestill = {
         </div>
         <textarea id="table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input kandidat-table-content" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
         <div id="table-cell-2-${index}" class="kandidat-table-content">
-            ${attachments}
+            <div class="upload-document-grid">
+                ${attachments}
+            </div>
             <label for="${fileInputID}-${index}">
                 Last opp dokument
                 <input id="${fileInputID}-${index}" type="file" multiple/>
@@ -58,6 +65,8 @@ const bestill = {
             fileInputID = `file-input-${i}`;
             attachmentAddEventListener(`${fileInputID}-${i}`, i);
         }
+
+        updatePriceEstimates();
     },
 
     delete_table_row: function(index, button) {

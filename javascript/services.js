@@ -17,7 +17,7 @@ let services = {
     Mediesøk: {
         name: "Mediesøk",
         description: "Vi undersøker sosiale medier og andre offentlige databaser",
-        pice: 2500
+        price: 2500
     },
     Referansekontroll: {
         name: "Referansekontroll",

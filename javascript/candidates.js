@@ -30,6 +30,18 @@ function updatePriceEstimates() {
         }
         candidates[i].price = price
     }
+
+    updateTotalPrice()
+}
+
+function updateTotalPrice() {
+    let price = 0;
+    for (let i = 0; i < candidates.length; i++) {
+        for (let j = 0; j < candidates[i].services.length; j++) {
+            price += services[candidates[i].services[j]].price;
+        }
+    }
+    document.getElementById("price-estimate-display").innerHTML = price + " NOK";
 }
 
 function removeFileFromCandidate(candidateIndex, fileIndex) {
