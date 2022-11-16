@@ -76,13 +76,29 @@ const bestill = {
     },
 
     create_serivce: function(name, description) {
+        let included = 0
+        for (let i = 0; i < candidates.length; i++) {
+            if (candidates[i].services.includes(name)) {
+                included++;
+            }
+        }
+
+        let checkImage = "checkbox-unchecked.svg";
+        if (included == candidates.length) {
+            checkImage = "checkbox-checked.svg"
+        } else if (included == 0) {
+            checkImage = "checkbox-unchecked.svg";
+        } else {
+            checkImage = "checkbox-minus.svg";
+        }
+
         element = document.getElementById("tjenester-card-section");
         content = `
         <div class="checkbox-card">
             <h3>${name}</h3>
             <img class="checkbox-card-icon" src="images/search-icon.svg"/>
             <div class="checkbox-card-text">${description}</div>
-            <img class="checkbox-icon" onclick="serviceCheckBox(null, '${name}')" id="${name}-checkbox" src="images/checkbox-unchecked.svg"/>
+            <img class="checkbox-icon" onclick="serviceCheckBox(null, '${name}')" id="${name}-checkbox" src="images/${checkImage}"/>
         </div>`
 
         element.innerHTML += content;

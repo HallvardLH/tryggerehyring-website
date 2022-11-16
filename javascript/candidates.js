@@ -19,6 +19,18 @@ let candidates = [{
     attachments: []
 }]
 
+function initializeCandidates() {
+    Object.keys(services).forEach(function(key) {
+        if (services[services[key].name].default) {
+            for (let i = 0; i < candidates.length; i++) {
+                candidates[i].services.push(services[key].name);
+            }
+        }
+    });
+}
+
+initializeCandidates();
+
 /**
  * Sets the price value for each candidate based on the service array.
  */

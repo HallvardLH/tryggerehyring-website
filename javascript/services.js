@@ -2,62 +2,74 @@ let services = {
     Arbeid: {
         name: "Arbeid",
         description: "Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.",
-        price: 2000
+        price: 2000,
+        default: true
     },
     Utdanning: {
         name: "Utdanning",
         description: "Vi kan verifisere grader, vintemål og karakterutskrifter",
-        price: 1000
-    },
-    Sertifikat: {
-        name: "Sertifikat",
-        description: "Verifisering av førerkort, lisenser og andre autoriseringer",
-        price: 500
+        price: 1000,
+        default: true
     },
     Mediesøk: {
         name: "Mediesøk",
         description: "Vi undersøker sosiale medier og andre offentlige databaser",
-        price: 2500
+        price: 2500,
+        default: true
+    },
+    Sertifikat: {
+        name: "Sertifikat",
+        description: "Verifisering av førerkort, lisenser og andre autoriseringer",
+        price: 500,
+        default: false
     },
     Referansekontroll: {
         name: "Referansekontroll",
         description: "Vi dobbeltsjekker at referansene er ekte, og vi kan gjennomføre referanseintervju",
-        price: 500
+        price: 500,
+        default: false
     },
     Identitet: {
         name: "Identitet",
         description: "Valideringssjekk av alle typer ID-dokument",
-        price: 1000
+        price: 1000,
+        default: false
     },
     Næringsinteresser: {
         name: "Næringsinteresser",
         description: "Vi finner roller og eierskap i norske og utelandske bedrifter",
-        price: 500
+        price: 500,
+        default: false
     },
     Adresse: {
         name: "Adresse",
         description: "Verifisering av oppgitt adresse",
-        price: 500
+        price: 500,
+        default: false
     },
     Kredittsjekk: {
         name: "Kredittsjekk",
         description: "Vi gjennmfører en kredittsjekk av finansiell historikk og betalingsanmerkninger",
-        price: 3500
+        price: 3500,
+        default: false
     },
     Lønnsbekreftelse: {
         name: "Lønnsbekreftelse",
         description: "Vi kan verifisere tidligere lønn",
-        price: 1000
+        price: 1000,
+        default: false
     },
     "Globale sanksjoner": {
         name: "Globale sanksjoner",
         description: "Vi leter gjennom globale databaser for å finne internasjonalt utstedte sanksjoner",
-        price: 2000
+        price: 2000,
+        default: false
     },
     Politiattest: {
         name: "Politiattest",
         description: "Vi kan hjelpe kandidaten med å søke om politiattest",
-        price: 1500
+        price: 1500,
+        default: false
     }
 }
 
