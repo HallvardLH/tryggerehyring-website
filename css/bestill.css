@@ -1,5 +1,5 @@
-.velg-tjenester-section, .informasjon-kandidat-section {
-    padding: 0 100px 50px 100px;
+.velg-tjenester-section, .informasjon-kandidat-section, .receipt-table {
+    padding: 50px 100px 50px 100px;
 }
 
 .tjenester-card-section {
@@ -27,10 +27,12 @@
     align-self: center;
 }
 
+.tjenester-card-section .checkbox-icon {
+    margin: 0 auto;
+}
 .checkbox-icon {
     width: 36px;
     height: 36px;
-    margin: 0 auto;
     align-self: flex-end;
 }
 
@@ -40,11 +42,8 @@
 }
 
 
-/* Informasjon om kandidaten */
-
-.kandidat-table {
+.order-table {
     display: grid;
-    grid-template-columns: 150px 1fr 1fr 1fr 1fr;
     box-sizing: border-box;
     /* gap: 15px; */
 }
@@ -53,13 +52,8 @@
     background-color: var(--highlight-color);
     padding: 10px;
 }
-/* .kandidat-table-top, .kandidat-table-content {
-    display: grid;
-    grid-template-columns: 0.7fr 1fr 1fr 1fr 1fr;
-    gap: 15px;
-} */
 
-.kandidat-table-content {
+.order-table-content {
     border-bottom: solid var(--main-color) 2px;
     padding: 10px;
     line-height: 1.8;
@@ -82,7 +76,7 @@
     border-bottom: solid var(--main-color)
 }
 
-.kandidat-table-content input[type=file] {
+.order-table-content input[type=file] {
     display: none;
 }
 
@@ -90,7 +84,7 @@
     width: 150px;
 }
 
-.kandidat-table-content label, .highlighted-underlined {
+.order-table-content label, .highlighted-underlined {
     color: var(--main-color);
     text-decoration: underline;
     cursor: pointer;
@@ -114,4 +108,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
+}
+
+.checkbox-with-label {
+    display: flex;
+    width: 210px;
+    align-items: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    gap: 10px;
 }

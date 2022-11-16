@@ -50,7 +50,13 @@
             Velg tjenester
         </h1>
         <div class="separator"></div>
-        <div class="tjenester-card-section" id="tjenester-card-section"></div>
+        <div class="checkbox-with-label">
+            <div>Velg alle tjenester</div>
+            <img class="checkbox-icon" onclick="selectAllServices()" id="check-all-checkbox" src="images/checkbox-unchecked.svg"/>
+        </div>
+        <div class="tjenester-card-section" id="tjenester-card-section">
+            <!-- Content added programatically -->
+        </div>
     </div>
 
     <div class="informasjon-kandidat-section">
@@ -58,7 +64,7 @@
             Informasjon om kandidaten
         </h1>
         <div class="separator"></div>
-        <div class="kandidat-table" id="kandidat-table">
+        <div class="order-table" style="grid-template-columns: 150px repeat(4, 1fr);" id="kandidat-table">
                 <div class="table-top" style="border-top-left-radius: 25px"><b>Navn*</b></div>
                 <div class="table-top"><b>Ytterlig informasjon</b></div>
                 <div class="table-top"><b>Dokument</b></div>
@@ -114,6 +120,11 @@
             <input class="sammendrag-input" id="summary-name-input" type="text" placeholder="Navn Etternavn"/>
             <p class="sammendrag-small-text">Vi sender ut faktura sammen med rapporten til mailen under:*</p>
             <input class="sammendrag-input" id="summary-email-input" type="text" placeholder="din-epost@bedrift.no"/>
+            <p class="sammendrag-small-text">Jeg har fått samtykke til deling av personlig informasjon*:</p>
+            <div class="checkbox-with-label">
+                <div>Ja</div>
+                <img class="checkbox-icon" onclick="" id="consent-checkbox" src="images/checkbox-unchecked.svg"/>
+            </div>
             <p class="sammendrag-small-text">Prisen for alle rapportene blir:</p>
             <div class="sammendrag-big-text" id="price-estimate-display">0 NOK</div>
             <div class="bestill-button-grid">
@@ -126,6 +137,13 @@
         <div class="info-right">
             <img class="info-image" src="images/generic-image-5.svg" />
         </div>
+    </div>
+
+    <div class="order-table receipt-table" style="grid-template-columns: repeat(4, 1fr);" id="receipt-table">
+        <div class="table-top" style="border-top-left-radius: 25px"><b>Tjeneste</b></div>
+        <div class="table-top"><b>Antall</b></div>
+        <div class="table-top"><b>Stk. pris</b></div>
+        <div class="table-top" style="border-top-right-radius: 25px"><b>Netto</b></div>
     </div>
 </body>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
