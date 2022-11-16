@@ -142,7 +142,12 @@ function serviceCheckBox(candidateIndex, name) {
 }
 
 function updateCheckbox(name, checked, modal) {
+    if (!modal) {
+        modal = "";
+    }
+
     if(checked == true) {
+        console.log("SETTING: " + `${name}${modal}-checkbox`);
         document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-checked.svg";
     } else if (checked == false) {
         document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-unchecked.svg";
@@ -151,6 +156,34 @@ function updateCheckbox(name, checked, modal) {
     }
 }
 
+function selectAllServices() {
+    for (let i = 0; i < candidates.length; i++) {
+        Object.keys(services).forEach(function(key) {
+            if (!candidates[i].services.includes(services[key].name)) {
+                candidates[i].services.push(services[key].name);
+            }
+        });
+    }
+
+    Object.keys(services).forEach(function(key) {
+        updateCheckbox(services[key].name, 1);
+    });
+
+    bestill.create_all_rows();
+}
+
+function deselectAllServices() {
+    for (let i = 0; i < candidates.length; i++) {
+        candidates[i].services = [];
+    }
+
+    Object.keys(services).forEach(function(key) {
+        updateCheckbox(services[key].name, 0);
+    });
+
+    bestill.create_all_rows();
+}
+ 
 /**
  * USAGE:
  * serviceCheckBoxAddEventListener(candidateIndex)
