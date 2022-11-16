@@ -43,6 +43,7 @@ const bestill = {
         </div>
         `
         element.innerHTML += content;
+        bestill.create_all_receipt_rows();
     },
 
     create_all_rows: function(length) {
@@ -139,6 +140,29 @@ const bestill = {
         document.getElementById("service-selection-container").innerHTML = "";
         Object.keys(services).forEach(function(key) {
             bestill.create_modal_checkbox(index, services[key].name, candidates[index].services.includes(services[key].name));
+        });
+    },
+
+    create_receipt_row: function(name, amount, price, totalPrice) {
+        /**
+         * TO DO:
+         * IMPLEMENT HTML HERE
+         */
+    },
+
+    create_all_receipt_rows: function() {
+        Object.keys(services).forEach(function(key) {
+            let amount = 0;
+            let totalPrice = 0;
+            for (let i = 0; i < candidates.length; i++) {
+                if (candidates[i].services.includes(services[key].name)) {
+                    amount++;
+                    totalPrice += services[services[key].name].price;
+                }
+            }
+            if (amount > 0) {
+                bestill.create_receipt_row(services[key].name, amount, services[services[key].name].price, totalPrice);
+            }
         });
     }
 }

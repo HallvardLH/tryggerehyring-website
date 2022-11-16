@@ -147,7 +147,6 @@ function updateCheckbox(name, checked, modal) {
     }
 
     if(checked == true) {
-        console.log("SETTING: " + `${name}${modal}-checkbox`);
         document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-checked.svg";
     } else if (checked == false) {
         document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-unchecked.svg";
