@@ -33,6 +33,12 @@ function validateOrder() {
         }
         valid = false;
     }
+
+    if (document.getElementById(`CONSENT-CHECKBOX-IMAGE`).src == "images/checkbox-unchecked.svg") {
+        document.getElementById(`CONSENT-CHECKBOX-IMAGE`).style.borderBottom = "solid red";
+        errorMessage += `Manglende samtykke for deling av personlig informasjon<br />`
+        valid = false;
+    }
     
     document.getElementById("bestill-error-message").innerHTML = "";
     document.getElementById("bestill-error-message").innerHTML = errorMessage;
