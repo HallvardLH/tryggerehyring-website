@@ -19,11 +19,11 @@ const bestill = {
 
         element = document.getElementById("kandidat-table");
         content = `
-        <div id="table-cell-0-${index}" class="kandidat-table-content">
+        <div id="kandidat-table-cell-0-${index}" class="order-table-content">
             <input class="kandidat-name-input" id="kandidat-name-input-${index}" type="text" oninput="bestill.onchange_name(${index})" value="${candidates[index].name}" placeholder="Skriv inn navn"/>
         </div>
-        <textarea id="table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input kandidat-table-content" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
-        <div id="table-cell-2-${index}" class="kandidat-table-content">
+        <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input order-table-content" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
+        <div id="kandidat-table-cell-2-${index}" class="order-table-content">
             <div class="upload-document-grid">
                 ${attachments}
             </div>
@@ -32,11 +32,11 @@ const bestill = {
                 <input id="${fileInputID}-${index}" type="file" multiple/>
             </label>
         </div>
-        <div id="table-cell-3-${index}" class="kandidat-table-content">
+        <div id="kandidat-table-cell-3-${index}" class="order-table-content">
             ${servicesString}
             <div class="highlighted-underlined" onclick="openModal('service-selection-modal'), bestill.create_all_modal_checkboxes(${index})">Rediger</div>
         </div>
-        <div id="table-cell-4-${index}" class="kandidat-table-content">
+        <div id="kandidat-table-cell-4-${index}" class="order-table-content">
             <div class="highlighted-underlined" onclick="removeCandidate(${index})">
                 Fjern kandidat
             </div>
@@ -53,7 +53,7 @@ const bestill = {
 
         for (let i = 0; i < length; i++) {
             try {
-                this.delete_table_row(i, false)
+                this.delete_table_row(i, 5, "kandidat");
             } catch {
 
             }
@@ -70,9 +70,9 @@ const bestill = {
         updatePriceEstimates();
     },
 
-    delete_table_row: function(index, button) {
-        for(let i = 0; i < 5; i++) {
-            document.getElementById(`table-cell-${i}-${index}`).remove();
+    delete_table_row: function(index, columns, table) {
+        for(let i = 0; i < columns; i++) {
+            document.getElementById(`${table}-table-cell-${i}-${index}`).remove();
         }
     },
 
@@ -143,14 +143,29 @@ const bestill = {
         });
     },
 
-    create_receipt_row: function(name, amount, price, totalPrice) {
-        /**
-         * TO DO:
-         * IMPLEMENT HTML HERE
-         */
+    receipt_table_rows: 0,
+    create_receipt_row: function(info, id) {
+        element = document.getElementById("receipt-table");
+        content = "";
+        for(let i = 0; i < info.length; i++){
+            content += `
+            <div id="receipt-table-cell-${i}-${id}" class="order-table-content">
+                ${info[i]}
+            </div>`
+        }
+        this.receipt_table_rows++;
+
+        element.innerHTML += content;
     },
 
     create_all_receipt_rows: function() {
+        // Delete all rows
+        for (let i = 0; i < this.receipt_table_rows; i++) {
+            this.delete_table_row(i, 4, "receipt");
+        }
+        this.receipt_table_rows = 0;
+
+        iterations = 0;
         Object.keys(services).forEach(function(key) {
             let amount = 0;
             let totalPrice = 0;
@@ -161,7 +176,8 @@ const bestill = {
                 }
             }
             if (amount > 0) {
-                bestill.create_receipt_row(services[key].name, amount, services[services[key].name].price, totalPrice);
+                bestill.create_receipt_row([services[key].name, amount, services[services[key].name].price, totalPrice], iterations);
+                iterations++;
             }
         });
     }

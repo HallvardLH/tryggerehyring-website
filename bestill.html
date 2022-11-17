@@ -11,7 +11,7 @@
     <link href="css/offers.css" rel="stylesheet" type="text/css">
     <link href="css/bestill.css" rel="stylesheet" type="text/css">
     <link href="css/modal.css" rel="stylesheet" type="text/css">
-
+    <link href="css/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="top-nav">
@@ -21,7 +21,7 @@
         </div>
         <div class="nav-links">
             <a href="index.html" class="nav-link">Hjem</a>
-            <a href="bestill.html" class="nav-link">Bestill</a>
+            <b><a href="bestill.html" class="nav-link">Bestill</a></b>
             <a href="" class="nav-link">Kontakt</a>
             <a href="" class="nav-link">Hjelp</a>
             <a href="" class="nav-link">Om oss</a>
@@ -50,7 +50,13 @@
             Velg tjenester
         </h1>
         <div class="separator"></div>
-        <div class="tjenester-card-section" id="tjenester-card-section"></div>
+        <div class="checkbox-with-label">
+            <div>Velg alle tjenester</div>
+            <img class="checkbox-icon" onclick="selectAllServices()" id="check-all-checkbox" src="images/checkbox-unchecked.svg"/>
+        </div>
+        <div class="tjenester-card-section" id="tjenester-card-section">
+            <!-- Content added programatically -->
+        </div>
     </div>
 
     <div class="informasjon-kandidat-section">
@@ -58,7 +64,7 @@
             Informasjon om kandidaten
         </h1>
         <div class="separator"></div>
-        <div class="kandidat-table" id="kandidat-table">
+        <div class="order-table" style="grid-template-columns: 150px repeat(4, 1fr);" id="kandidat-table">
                 <div class="table-top" style="border-top-left-radius: 25px"><b>Navn*</b></div>
                 <div class="table-top"><b>Ytterlig informasjon</b></div>
                 <div class="table-top"><b>Dokument</b></div>
@@ -114,17 +120,54 @@
             <input class="sammendrag-input" id="summary-name-input" type="text" placeholder="Navn Etternavn"/>
             <p class="sammendrag-small-text">Vi sender ut faktura sammen med rapporten til mailen under:*</p>
             <input class="sammendrag-input" id="summary-email-input" type="text" placeholder="din-epost@bedrift.no"/>
+            <p class="sammendrag-small-text">Jeg har fått samtykke til deling av personlig informasjon*:</p>
+            <div class="checkbox-with-label">
+                <div>Ja</div>
+                <img class="checkbox-icon" onclick="" id="consent-checkbox" src="images/checkbox-unchecked.svg"/>
+            </div>
             <p class="sammendrag-small-text">Prisen for alle rapportene blir:</p>
             <div class="sammendrag-big-text" id="price-estimate-display">0 NOK</div>
-            <div class="bestill-button-grid">
-                <button onclick="order()" class="filled-button" style="border-radius: 15px;">
-                    Bestill
-                </button>
-                <div id="bestill-error-message"></div>
-            </div>
+            <button onclick="order()" class="filled-button" style="border-radius: 15px;">
+                Bestill
+            </button>
         </div>
         <div class="info-right">
             <img class="info-image" src="images/generic-image-5.svg" />
+        </div>
+        <div class="bestill-error-message" id="bestill-error-message"></div>
+    </div>
+
+    <div class="order-table receipt-table" style="grid-template-columns: repeat(4, 1fr);" id="receipt-table">
+        <div class="table-top" style="border-top-left-radius: 25px"><b>Tjeneste</b></div>
+        <div class="table-top"><b>Antall</b></div>
+        <div class="table-top"><b>Stk. pris</b></div>
+        <div class="table-top" style="border-top-right-radius: 25px"><b>Netto</b></div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-contents">
+            <div>
+                <div class="logo footer-logo">
+                    <img class="logo-img" src="images/logo-white.svg" />
+                    <div class="logo-text">Tryggerehyring.no</div>
+                </div>
+                <div class="footer-text">
+                    LOREM IPSUM
+                </div>
+            </div>
+            <div>
+                <div class="footer-title">Bedrift</div>
+                <a href="" class="footer-link">Om oss</a><br />
+                <a href="" class="footer-link">Vare kunder</a>
+            </div>
+            <div>
+                <div class="footer-title">Hjelp</div>
+                <a href="" class="footer-link">Hjelpesenter</a><br />
+                <a href="" class="footer-link">Kontakt oss</a>
+            </div>
+        </div>
+        <div>
+            ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt
         </div>
     </div>
 </body>
