@@ -16,9 +16,22 @@
 }
 
 .info-text {
-    color: var(--text-color)
+    color: var(--text-color);
+}
+
+.info-larger-text {
+    color: var(--text-color);
+    font-size: 1.2rem;
 }
 
 .info-image {
     max-width: 100%;
+}
+
+.separator {
+    width: 50px;
+    height: 2px;
+    background-color: black;
+    justify-self: center;
+    margin-bottom: 25px;
 }
