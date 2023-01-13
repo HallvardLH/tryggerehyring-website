@@ -1,7 +1,3 @@
-.velg-tjenester-section, .informasjon-kandidat-section, .receipt-table {
-    padding: 50px 100px 50px 100px;
-}
-
 .tjenester-card-section {
     display: flex;
     flex-wrap: wrap;
