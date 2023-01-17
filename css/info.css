@@ -5,10 +5,11 @@
     padding: 0 100px;
     box-sizing: border-box;
     margin-top: 200px;
+    align-items: center;
 }
 
-.info-left {
-    /* padding: 50px 50px 50px 0 */
+.info-section-no-img {
+    grid-template-columns: 1fr 0.2fr;
 }
 
 .info-left button {
@@ -28,4 +29,13 @@
 .info-image {
     max-width: 100%;
     min-width: 220px;
+}
+
+@media only screen and (max-width: 700px) { /* Mobile layout */
+    .info-section {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        padding: 0 20px;
+        margin-top: 50px;
+    }
 }

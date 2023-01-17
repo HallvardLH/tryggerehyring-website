@@ -43,3 +43,22 @@
 a:hover {
     color: var(--main-color);
 }
+
+.hamburger-container {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) { /* Mobile layout */
+    .nav-links {
+        display: none;
+    }
+    .top-nav {
+        padding: 0 20px;
+        width: auto;
+        justify-items: end;
+        height: 80px;
+    }
+    .hamburger-container {
+        display: block;
+    }
+}

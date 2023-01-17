@@ -39,5 +39,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 55px;
+    padding: 55px 0;
+}
+
+@media only screen and (max-width: 700px) { /* Mobile layout */
+    .offers-section {
+        padding: 0 20px;
+        margin-top: 20px;
+    }
 }
