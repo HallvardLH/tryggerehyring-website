@@ -33,16 +33,16 @@ function validateOrder() {
         if (document.getElementById(`summary-email-input`).value.length == 0) {
             errorMessage += `&#x2022 Manglende e-post<br />`
         } else {
-            errorMessage += `Ugyldig e-post<br />`
+            errorMessage += `&#x2022 Ugyldig e-post<br />`
         }
         valid = false;
     } else {
         document.getElementById(`summary-email-input`).style.borderBottom = "";
     }
 
-    if (document.getElementById(`CONSENT-CHECKBOX-IMAGE`).src == "images/checkbox-unchecked.svg") {
-        document.getElementById(`CONSENT-CHECKBOX-IMAGE`).style.borderBottom = "solid red";
-        errorMessage += `Manglende samtykke for deling av personlig informasjon<br />`
+    if (document.getElementById(`consent-checkbox`).src.includes("images/checkbox-unchecked.svg")) {
+        document.getElementById(`consent-checkbox`).style.borderBottom = "solid red";
+        errorMessage += `&#x2022 Manglende samtykke for deling av personlig informasjon<br />`
         valid = false;
     }
     
