@@ -2,6 +2,7 @@
     display: grid;
     position: fixed;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
     top: 0;
     left: 0;
     align-items: center;
@@ -30,9 +31,15 @@
 .nav-links {
     display: flex;
     justify-content: space-evenly;
+    gap: 20px;
+    min-width: 405px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #1F1534;
+}
+
+a:hover {
+    color: var(--main-color);
 }

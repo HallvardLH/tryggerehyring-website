@@ -17,6 +17,7 @@
 
 .info-text {
     color: var(--text-color);
+    line-height: 25px;
 }
 
 .info-larger-text {
@@ -26,4 +27,5 @@
 
 .info-image {
     max-width: 100%;
+    min-width: 220px;
 }

@@ -7,6 +7,7 @@
     --main-color: #458FF6;
     --text-color: #7D7987;
     --highlight-color: #DFEDFD;
+    --background-color: white;
 }
 
 body {
@@ -33,20 +34,22 @@ body {
     margin-bottom: 25px;
 }
 
-.filled-button {
+button {
     width: 150px;
     height: 40px;
     border-radius: 55px;
+    transition: all 0.3s;
+}
+
+.filled-button, .unfilled-button:hover {
     background-color: var(--main-color);
     border: none;
     color: white;
     font-size: 1rem;
 }
 
-.unfilled-button {
-    width: 150px;
-    height: 40px;
-    border-radius: 55px;
+.unfilled-button, .filled-button:hover {
+    background-color: transparent;
     border: solid var(--main-color);
     color: var(--main-color);
     font-size: 1rem;

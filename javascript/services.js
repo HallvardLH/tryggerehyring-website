@@ -72,14 +72,14 @@ let services = {
     "Globale sanksjoner": {
         name: "Globale sanksjoner",
         description: "Vi leter gjennom globale databaser for å finne internasjonalt utstedte sanksjoner",
-        description_long: "Vi leter gjennom globale databaser for å finne internasjonalt utstedte sanksjoner. ",
+        description_long: "Vi leter gjennom globale databaser for å finne internasjonalt utstedte sanksjoner.",
         price: 2000,
         default: false
     },
     Politiattest: {
         name: "Politiattest",
         description: "Vi kan hjelpe kandidaten med å søke om politiattest",
-        description_long: "Vi kan hjelpe kandidaten med å søke om politiattest",
+        description_long: "Vi kan hjelpe kandidaten med å søke om politiattest.",
         price: 1500,
         default: false
     }
@@ -149,7 +149,8 @@ function serviceCheckBox(candidateIndex, name) {
         updateCheckbox(name, checked, "");
     }
 
-    updatePriceEstimates()
+    updatePriceEstimates();
+
     bestill.create_all_rows();
 }
 
@@ -167,50 +168,29 @@ function updateCheckbox(name, checked, modal) {
     }
 }
 
+let allSelected = false;
 function selectAllServices() {
-    for (let i = 0; i < candidates.length; i++) {
-        Object.keys(services).forEach(function(key) {
-            if (!candidates[i].services.includes(services[key].name)) {
-                candidates[i].services.push(services[key].name);
-            }
-        });
+    if(!allSelected) {
+        for (let i = 0; i < candidates.length; i++) {
+            Object.keys(services).forEach(function(key) {
+                if (!candidates[i].services.includes(services[key].name)) {
+                    candidates[i].services.push(services[key].name);
+                }
+            });
+        }
+        allSelected = true;
+        document.getElementById("check-all-checkbox").src = "images/checkbox-checked.svg";
+    } else {
+        for (let i = 0; i < candidates.length; i++) {
+            candidates[i].services = [];
+        }
+        allSelected = false;
+        document.getElementById("check-all-checkbox").src = "images/checkbox-unchecked.svg";
     }
 
     Object.keys(services).forEach(function(key) {
-        updateCheckbox(services[key].name, 1);
+        updateCheckbox(services[key].name, (allSelected ? 1 : 0));
     });
 
     bestill.create_all_rows();
 }
-
-function deselectAllServices() {
-    for (let i = 0; i < candidates.length; i++) {
-        candidates[i].services = [];
-    }
-
-    Object.keys(services).forEach(function(key) {
-        updateCheckbox(services[key].name, 0);
-    });
-
-    bestill.create_all_rows();
-}
- 
-/**
- * USAGE:
- * serviceCheckBoxAddEventListener(candidateIndex)
- * HTML example:
- *  <fieldset>   
-        <input type="checkbox" id="Arbeid" name="scales">
-        <input type="checkbox" id="Utdanning" name="scales">
-        <input type="checkbox" id="Sertifikat" name="scales">
-        <input type="checkbox" id="Mediesøk" name="scales">
-        <input type="checkbox" id="Referansekontroll" name="scales">
-        <input type="checkbox" id="Identitet" name="scales">
-        <input type="checkbox" id="Næringsinteresser" name="scales">
-        <input type="checkbox" id="Adresse" name="scales">
-        <input type="checkbox" id="Kredittsjekk" name="scales">
-        <input type="checkbox" id="Lønnsbekreftelse" name="scales">
-        <input type="checkbox" id="Globale sanksjoner" name="scales">
-        <input type="checkbox" id="Politiattest" name="scales">
-    </fieldset>
- */

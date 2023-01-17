@@ -41,6 +41,7 @@
 .order-table {
     display: grid;
     box-sizing: border-box;
+    background-color: var(--background-color);
     /* gap: 15px; */
 }
 
