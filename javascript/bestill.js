@@ -180,6 +180,18 @@ const bestill = {
                 iterations++;
             }
         });
+    },
+
+    consent_checked: false,
+    consent_checkbox: function() {
+        if(this.consent_checked) {
+            this.consent_checked = false;
+            document.getElementById("consent-checkbox").src = "images/checkbox-unchecked.svg"
+        }
+        else {
+            this.consent_checked = true;
+            document.getElementById("consent-checkbox").src = "images/checkbox-checked.svg"
+        }
     }
 }
 

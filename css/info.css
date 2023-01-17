@@ -16,7 +16,12 @@
 }
 
 .info-text {
-    color: var(--text-color)
+    color: var(--text-color);
+}
+
+.info-larger-text {
+    color: var(--text-color);
+    font-size: 1.2rem;
 }
 
 .info-image {

@@ -14,14 +14,6 @@
     color: var(--text-color)
 }
 
-.separator {
-    width: 50px;
-    height: 2px;
-    background-color: black;
-    justify-self: center;
-    margin-bottom: 30px
-}
-
 .offers-card-container {
     display: flex;
     flex-wrap: wrap;

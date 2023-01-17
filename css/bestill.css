@@ -1,7 +1,3 @@
-.velg-tjenester-section, .informasjon-kandidat-section, .receipt-table {
-    padding: 50px 100px 50px 100px;
-}
-
 .tjenester-card-section {
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +26,7 @@
 .tjenester-card-section .checkbox-icon {
     margin: 0 auto;
 }
+
 .checkbox-icon {
     width: 36px;
     height: 36px;
@@ -116,7 +113,7 @@
 .bestill-error-message {
     display: none;
     line-height: 1.5;
-    border: 2px solid red;
+    border: 2px solid #ff4c4c;
     border-radius: 15px;
     padding: 10px;
 }
