@@ -14,7 +14,7 @@ const bestill = {
         let servicesString= "";
         if(!candidates[index].servicesExpanded & candidates[index].services.length > 3) {
             servicesString += `<div>${candidates[index].services[0]}</div><div>${candidates[index].services[1]}</div><div>${candidates[index].services[2]}</div>`;
-            servicesString += `<div onclick="bestill.toggle_expand_services(${index}, true)" class="expand-services highlighted-underlined">Vis alle tjenester</div>`
+            servicesString += `<div onclick="bestill.toggle_expand_services(${index}, true)" class="expand-services highlighted-underlined">Vis alt (${candidates[index].services.length - 3})</div>`
         } else {
             for (let i = 0; i < candidates[index].services.length; i++) {
                 servicesString += `<div>${candidates[index].services[i]}</div>`;

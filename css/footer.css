@@ -37,7 +37,7 @@
     display: block;
 }
 
-@media only screen and (max-width: 910px) { /* Mobile layout */
+@media only screen and (max-width: 960px) { /* Mobile layout */
     .footer-container {
         padding: 20px 20px;
     }

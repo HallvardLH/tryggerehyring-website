@@ -11,6 +11,7 @@
     padding: 0 100px;
     box-sizing: border-box;
     background-color: white;
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 
 .logo {

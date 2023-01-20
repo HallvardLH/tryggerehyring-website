@@ -43,19 +43,3 @@ function validateEmail(email) {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
-
-/**
- * Checks the style of the class "is-mobile"
- * Which is determined by a CSS media query
- * That changes its accent-color style
- * When the screen is smaller than 700px
- * @returns boolean
- */
-function isMobile() {
-    style = getComputedStyle(document.querySelector(".is-mobile"));
-    if(style.accentColor == "rgb(0, 128, 0)") {
-        return true
-    } else {
-        return false
-    }
-}
