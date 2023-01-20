@@ -16,7 +16,8 @@ let candidates = [{
     information: "",
     services: [],
     price: 0,
-    attachments: []
+    attachments: [],
+    servicesExpanded: false,
 }]
 
 function initializeCandidates() {

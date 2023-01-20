@@ -54,3 +54,12 @@ button {
     color: var(--main-color);
     font-size: 1rem;
 }
+
+@media only screen and (max-width: 700px) { /* Mobile layout */
+    .is-mobile {
+        accent-color: rgb(0, 128, 0);
+    }
+    .section {
+        padding: 0 20px;
+    }
+} 

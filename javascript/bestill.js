@@ -1,4 +1,5 @@
 const bestill = {
+    unique_id: 0,
     new_table_row: function(index) {
         let attachments = "";
         for (let i = 0; i < candidates[index].attachments.length; i++) {
@@ -11,39 +12,98 @@ const bestill = {
         }
 
         let servicesString= "";
-        for (let i = 0; i < candidates[index].services.length; i++) {
-            servicesString += candidates[index].services[i] + "<br />";
+        if(!candidates[index].servicesExpanded & candidates[index].services.length > 3) {
+            servicesString += `<div>${candidates[index].services[0]}</div><div>${candidates[index].services[1]}</div><div>${candidates[index].services[2]}</div>`;
+            servicesString += `<div onclick="bestill.toggle_expand_services(${index}, true)" class="expand-services highlighted-underlined">Vis alle tjenester</div>`
+        } else {
+            for (let i = 0; i < candidates[index].services.length; i++) {
+                servicesString += `<div>${candidates[index].services[i]}</div>`;
+            }
+            if(candidates[index].services.length > 3) {
+                servicesString += `<div onclick="bestill.toggle_expand_services(${index}, false)" class="expand-services highlighted-underlined">Vis mindre</div>`
+            }
         }
         
         fileInputID = `file-input-${index}`;
 
-        element = document.getElementById("kandidat-table");
-        content = `
-        <div id="kandidat-table-cell-0-${index}" class="order-table-content">
-            <input class="kandidat-name-input" id="kandidat-name-input-${index}" type="text" oninput="bestill.onchange_name(${index})" value="${candidates[index].name}" placeholder="Skriv inn navn"/>
-        </div>
-        <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input order-table-content" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
-        <div id="kandidat-table-cell-2-${index}" class="order-table-content">
-            <div class="upload-document-grid">
-                ${attachments}
+        if(isMobile()) {
+            element = document.getElementById("kandidat-table-mobile");
+            content = `
+            <div id="kandidat-table-${index}" class="mobile-table-container">
+                <div class="mobile-table-row">
+                    <div class="mobile-table-name">Navn*</div>
+                    <div id="kandidat-table-cell-0-${index}">
+                        <input class="kandidat-name-input" id="kandidat-name-input-${index}" type="text" oninput="bestill.onchange_name(${index})" value="${candidates[index].name}" placeholder="Skriv inn navn"/>
+                    </div>
+                </div>
+                <div class="mobile-table-row">
+                    <div class="mobile-table-name">Ytterlig informasjon</div>
+                    <div id="kandidat-table-cell-1-${index}">
+                        <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input mobile-table-content" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
+                    </div>
+                </div>
+                <div class="mobile-table-row">
+                    <div class="mobile-table-name">Dokument</div>
+                    <div id="kandidat-table-cell-2-${index}" class="mobile-table-content">
+                        <div class="upload-document-grid">
+                            ${attachments}
+                        </div>
+                        <label for="${fileInputID}-${index}">
+                            Last opp dokument
+                            <input id="${fileInputID}-${index}" type="file" multiple/>
+                        </label>
+                    </div>
+                </div>
+                <div class="mobile-table-row">
+                    <div class="mobile-table-name">Tjenester</div>
+                    <div id="kandidat-table-cell-3-${index}" class="mobile-table-content">
+                        ${servicesString}
+                        <div class="highlighted-underlined" onclick="openModal('service-selection-modal'), bestill.create_all_modal_checkboxes(${index})">Rediger</div>
+                    </div>
+                </div>
+                <div class="mobile-table-row">
+                    <div class="mobile-table-name">Fjern kandidat</div>
+                    <div id="kandidat-table-cell-4-${index}" class="mobile-table-content">
+                        <div class="highlighted-underlined" onclick="removeCandidate(${index})">
+                            Fjern kandidat
+                        </div>
+                    </div>
+                </div>
             </div>
-            <label for="${fileInputID}-${index}">
-                Last opp dokument
-                <input id="${fileInputID}-${index}" type="file" multiple/>
-            </label>
-        </div>
-        <div id="kandidat-table-cell-3-${index}" class="order-table-content">
-            ${servicesString}
-            <div class="highlighted-underlined" onclick="openModal('service-selection-modal'), bestill.create_all_modal_checkboxes(${index})">Rediger</div>
-        </div>
-        <div id="kandidat-table-cell-4-${index}" class="order-table-content">
-            <div class="highlighted-underlined" onclick="removeCandidate(${index})">
-                Fjern kandidat
+            `
+
+            this.unique_id++;
+        } else {
+            element = document.getElementById("kandidat-table-desktop");
+            content = `
+            <div id="kandidat-table-cell-0-${index}" class="order-table-content">
+                <input class="kandidat-name-input" id="kandidat-name-input-${index}" type="text" oninput="bestill.onchange_name(${index})" value="${candidates[index].name}" placeholder="Skriv inn navn"/>
             </div>
-        </div>
-        `
+            <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input order-table-content" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
+            <div id="kandidat-table-cell-2-${index}" class="order-table-content">
+                <div class="upload-document-grid">
+                    ${attachments}
+                </div>
+                <label for="${fileInputID}-${index}">
+                    Last opp dokument
+                    <input id="${fileInputID}-${index}" type="file" multiple/>
+                </label>
+            </div>
+            <div id="kandidat-table-cell-3-${index}" class="order-table-content">
+                ${servicesString}
+                <div class="highlighted-underlined" onclick="openModal('service-selection-modal'), bestill.create_all_modal_checkboxes(${index})">Rediger</div>
+            </div>
+            <div id="kandidat-table-cell-4-${index}" class="order-table-content">
+                <div class="highlighted-underlined" onclick="removeCandidate(${index})">
+                    Fjern kandidat
+                </div>
+            </div>
+            `
+        }
         element.innerHTML += content;
-        bestill.create_all_receipt_rows();
+        if(!isMobile()) { // FIX THIS, RECEIPT TABLE DOES NOT WORK ON MOBILE
+            bestill.create_all_receipt_rows();
+        }
     },
 
     create_all_rows: function(length) {
@@ -71,8 +131,13 @@ const bestill = {
     },
 
     delete_table_row: function(index, columns, table) {
-        for(let i = 0; i < columns; i++) {
-            document.getElementById(`${table}-table-cell-${i}-${index}`).remove();
+        if(isMobile()) {
+            console.log(index)
+            document.getElementById(`${table}-table-${index}`).remove();
+        } else {
+            for(let i = 0; i < columns; i++) {
+                document.getElementById(`${table}-table-cell-${i}-${index}`).remove();
+            }
         }
     },
 
@@ -192,6 +257,11 @@ const bestill = {
             this.consent_checked = true;
             document.getElementById("consent-checkbox").src = "images/checkbox-checked.svg"
         }
+    },
+
+    toggle_expand_services: function(index, bool) {
+        candidates[index].servicesExpanded = bool;
+        bestill.create_all_rows();
     }
 }
 

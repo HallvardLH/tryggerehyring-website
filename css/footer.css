@@ -1,8 +1,7 @@
 .footer-container {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding: 100px 200px 100px 100px;
+    padding: 50px 200px 100px 100px;
     background-image: linear-gradient(rgba(103, 195, 243, 1), rgba(90, 152, 242, 1));
     color: white;
     margin-top: 200px;
@@ -26,7 +25,32 @@
 
 .footer-contents {
     display: flex;
-    justify-content: space-between;
+    gap: 20%;
     align-items: center;
-    width: 70%;
+}
+
+.footer-logo-mobile {
+    display: none;
+}
+
+.footer-logo-desktop {
+    display: block;
+}
+
+@media only screen and (max-width: 910px) { /* Mobile layout */
+    .footer-container {
+        padding: 20px 20px;
+    }
+
+    .footer-contents{
+        width: auto;
+    }
+
+    .footer-logo-mobile {
+        display: block;
+    }
+    
+    .footer-logo-desktop {
+        display: none;
+    }
 }

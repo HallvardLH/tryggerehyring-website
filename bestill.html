@@ -65,12 +65,15 @@
             Informasjon om kandidaten
         </h1>
         <div class="separator"></div>
-        <div class="order-table" style="grid-template-columns: 150px repeat(4, 1fr);" id="kandidat-table">
+        <div class="order-table table-desktop" style="grid-template-columns: 150px repeat(4, 1fr);" id="kandidat-table-desktop">
                 <div class="table-top" style="border-top-left-radius: 25px"><b>Navn*</b></div>
                 <div class="table-top"><b>Ytterlig informasjon</b></div>
                 <div class="table-top"><b>Dokument</b></div>
                 <div class="table-top"><b>Tjenester</b></div>
                 <div class="table-top" style="border-top-right-radius: 25px"><b>Fjern kandidat</b></div>
+        </div>
+        <div class="table-mobile" id="kandidat-table-mobile">
+
         </div>
         <button onclick="addNewCandidate()" class="unfilled-button" style="border-radius: 15px; margin-top: 30px">
             Legg til kandidat
@@ -146,15 +149,20 @@
     </div>
 
     <div class="footer-container">
+        <div class="footer-logo-mobile">
+            <div class="logo footer-logo">
+                <img class="logo-img" src="images/logo-white.svg" />
+                <div class="logo-text">Tryggerehyring.no</div>
+            </div>
+            <a>support@tryggerehyring.no</a>
+        </div>
         <div class="footer-contents">
-            <div>
+            <div class="footer-logo-desktop">
                 <div class="logo footer-logo">
                     <img class="logo-img" src="images/logo-white.svg" />
                     <div class="logo-text">Tryggerehyring.no</div>
                 </div>
-                <div class="footer-text">
-                    LOREM IPSUM
-                </div>
+                <a>support@tryggerehyring.no</a>
             </div>
             <div>
                 <div class="footer-title">Bedrift</div>
@@ -167,10 +175,11 @@
                 <a href="" class="footer-link">Kontakt oss</a>
             </div>
         </div>
-        <div>
+        <div style="margin-top: 20px">
             ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt.
         </div>
     </div>
+    <div class="is-mobile"></div>
         <!-- Start of HubSpot code snippet -->
     <button type="button" id="hs_show_banner_button"
     style="background-color: #458FF6; border: 1px solid #458FF6;

@@ -14,6 +14,7 @@
     background-color: var(--highlight-color);
     border-radius: 20px;
     padding: 20px;
+    box-shadow: 0px 14px 10px 0px rgb(199 199 199 / 56%);
 }
 
 .checkbox-card-icon {
@@ -54,7 +55,7 @@
     border-bottom: solid var(--main-color) 2px;
     padding: 10px;
     line-height: 1.8;
-    min-height: 50px;
+    min-height: 80px;
     /* background-color: white; */
 }
  
@@ -117,4 +118,40 @@
     border: 2px solid #ff4c4c;
     border-radius: 15px;
     padding: 10px;
+}
+
+.is-mobile {
+    display: none;
+    accent-color: red;
+}
+
+.mobile-table-container {
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.mobile-table-row {
+    display: flex;
+    border-bottom: solid var(--main-color) 2px;
+    /* gap: 10px; */
+}
+
+.mobile-table-name {
+    /* background-color: var(--highlight-color); */
+    padding: 0 10px;
+    flex: 0 0 25%;
+}
+
+@media only screen and (max-width: 700px) { /* Mobile layout */
+    .offers-section {
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+    .is-mobile {
+        accent-color: rgb(0, 128, 0);
+    }
+    .order-table {
+        display: none;
+    }
 }
