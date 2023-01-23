@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Om oss | Tryggere hyring</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/nav.css" rel="stylesheet" type="text/css">
         <link href="css/info.css" rel="stylesheet" type="text/css">
@@ -34,7 +35,17 @@
         </div>
     </div>
 
-    <div class="info-section">
+    <div class="sidenav" id="sidenav">
+        <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
+        <a href="index.html" class="nav-link">Hjem</a>
+        <a href="bestill.html" class="nav-link">Bestill</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="tjenester.html" class="nav-link">Tjenester</a>
+        <a href="hjelp.html" class="nav-link">Hjelp</a>
+        <a href="om-oss.html" class="nav-link">Om oss</a>
+    </div>
+
+    <div class="info-section mobile-reverse-grid">
         <div class="info-left">
             <h1 class="info-header">
                 Hvorfor er det viktig med bakgrunnsjekk?
@@ -94,27 +105,23 @@
             </div>
         </div>
         <div style="margin-top: 20px">
+            <!-- Start of HubSpot code snippet -->
+            <div class="cookie-button" id="hs_show_banner_button"
+            onClick="(function(){
+            var _hsp = window._hsp = window._hsp || [];
+            _hsp.push(['showBanner']);
+            })()"
+            >
+                Endre cookie-instillinger
+            </div>
+            <!-- End of HubSpot code snippet -->
+        </div>
+        <div style="margin-top: 20px">
             ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt.
         </div>
     </div>
 
     <div class="is-mobile"></div>
-
-    <!-- Start of HubSpot code snippet -->
-    <button type="button" id="hs_show_banner_button"
-    style="background-color: #458FF6; border: 1px solid #458FF6;
-           border-radius: 3px; padding: 10px 16px; text-decoration: none; color: #fff;
-           font-family: inherit; font-size: inherit; font-weight: normal; line-height: inherit;
-           text-align: left; text-shadow: none;"
-    onClick="(function(){
-      var _hsp = window._hsp = window._hsp || [];
-      _hsp.push(['showBanner']);
-    })()"
-    >
-    Cookie Settings
-    </button>
-    
-    <!-- End of HubSpot code snippet -->
 </body>
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26579858.js"></script>

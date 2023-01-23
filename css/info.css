@@ -33,9 +33,23 @@
 
 @media only screen and (max-width: 700px) { /* Mobile layout */
     .info-section {
-        grid-template-rows: 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr; */
         grid-template-columns: none;
         padding: 0 20px;
-        margin-top: 50px;
+        margin-top: 85px;
+    }
+
+    .mobile-reverse-grid {
+        grid-template-areas: 
+            "second"
+            "first";
+    }
+
+    .mobile-reverse-grid .info-left {
+        grid-area: first;
+    }
+
+    .mobile-reverse-grid .info-right {
+        grid-area: second;
     }
 }

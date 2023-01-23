@@ -3,6 +3,7 @@
     position: fixed;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    z-index: 1;
     top: 0;
     left: 0;
     align-items: center;
@@ -47,6 +48,42 @@ a:hover {
 
 .hamburger-container {
     display: none;
+    justify-self: end;
+}
+
+.sidenav-exit {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.sidenav-exit:hover, .checkbox-icon:hover {
+    transform: scale(1.1);
+}
+
+.sidenav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 0px;
+    z-index: 1;
+    top: 0;
+    right: -60px;
+    background-color: var(--main-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    line-height: 2.5rem;
+    white-space: nowrap;
+}
+
+.sidenav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 700px) { /* Mobile layout */
@@ -55,8 +92,6 @@ a:hover {
     }
     .top-nav {
         padding: 0 20px;
-        width: auto;
-        justify-items: end;
         height: 80px;
     }
     .hamburger-container {

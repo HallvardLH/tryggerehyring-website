@@ -30,16 +30,13 @@ const bestill = {
             element = document.getElementById("kandidat-table-mobile");
             content = `
             <div id="kandidat-table-${index}" class="mobile-table-container">
-                <div class="mobile-table-row">
-                    <div class="mobile-table-name">Navn*</div>
-                    <div id="kandidat-table-cell-0-${index}">
-                        <input class="kandidat-name-input" id="kandidat-name-input-${index}" type="text" oninput="bestill.onchange_name(${index})" value="${candidates[index].name}" placeholder="Skriv inn navn"/>
-                    </div>
+                <div class="mobile-name-input-container" id="kandidat-table-cell-0-${index}">
+                    <input class="kandidat-name-input mobile-name-input" id="kandidat-name-input-${index}" type="text" oninput="bestill.onchange_name(${index})" value="${candidates[index].name}" placeholder="Kandidatens nav*"/>
                 </div>
                 <div class="mobile-table-row">
                     <div class="mobile-table-name">Ytterlig informasjon</div>
-                    <div id="kandidat-table-cell-1-${index}">
-                        <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input mobile-table-content" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
+                    <div class="mobile-table-content">
+                        <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
                     </div>
                 </div>
                 <div class="mobile-table-row">
@@ -101,9 +98,7 @@ const bestill = {
             `
         }
         element.innerHTML += content;
-        if(!isMobile()) { // FIX THIS, RECEIPT TABLE DOES NOT WORK ON MOBILE
-            bestill.create_all_receipt_rows();
-        }
+        bestill.create_all_receipt_rows();
     },
 
     create_all_rows: function(length) {
@@ -131,8 +126,7 @@ const bestill = {
     },
 
     delete_table_row: function(index, columns, table) {
-        if(isMobile()) {
-            console.log(index)
+        if(isMobile() && table == "kandidat") {
             document.getElementById(`${table}-table-${index}`).remove();
         } else {
             for(let i = 0; i < columns; i++) {
@@ -181,7 +175,7 @@ const bestill = {
     },
 
     onchange_info: function(index) {
-        candidates[index].information = document.getElementById(`table-cell-1-${index}`).value;
+        candidates[index].information = document.getElementById(`kandidat-table-cell-1-${index}`).value;
     },
 
     create_modal_checkbox: function(index, name, checked) {

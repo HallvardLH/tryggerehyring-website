@@ -3,6 +3,8 @@ function order() {
         return;
     }
 
+    // ADD CODE FOR DISPLAYING ORDER CONFIRMATION MODAL
+
     //prepareAndSendEmail();
 }
 

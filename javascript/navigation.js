@@ -1,5 +1,16 @@
 const navigation = {
-
+    sidenav_state: false,
+    toggle_sidenav: function() {
+        if(!this.sidenav_state) {
+            document.getElementById("sidenav").style.width = "250px";
+            document.getElementById("sidenav").style.right = "0px";
+            this.sidenav_state = true;
+        } else {
+            document.getElementById("sidenav").style.width = "0";
+            document.getElementById("sidenav").style.right = "-100px";
+            this.sidenav_state = false;
+        }
+    }
 }
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */

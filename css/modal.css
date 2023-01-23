@@ -12,23 +12,25 @@
 
 .modal-content {
     display: grid;
-    grid-template-columns: 1fr 25px;
     /* background-color: var(--highlight-color); */
     background-color: white;
     margin: auto;
     padding: 20px;
     width: 60%;
+    max-width: 800px;
     border-radius: 20px;
     top: 50%;
     transform: translateY(-50%);
     position: relative;
+    overflow: scroll;
+    max-height: 70%;
 }
 
-.close {
-    font-size: 28px;
-    font-weight: bold;
-    user-select: none;
-    cursor: pointer;
+.modal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 5px;
 }
 
 .modal-service-icon, .modal-checkbox {
@@ -48,4 +50,14 @@
     background-color: var(--highlight-color);
     padding: 10px;
     border-radius: 10px;
+}
+
+@media only screen and (max-width: 800px) { /* Mobile layout */
+    .service-selection-container {
+        grid-template-columns: none;
+    }
+
+    .modal-content {
+        width: 85%;
+    }
 }

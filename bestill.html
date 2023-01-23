@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestill | Tryggere hyring</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/nav.css" rel="stylesheet" type="text/css">
     <link href="css/info.css" rel="stylesheet" type="text/css">
@@ -30,6 +31,16 @@
         <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
             <img src="images/hamburger.svg" />
         </div>
+    </div>
+
+    <div class="sidenav" id="sidenav">
+        <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
+        <a href="index.html" class="nav-link">Hjem</a>
+        <a href="bestill.html" class="nav-link">Bestill</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="tjenester.html" class="nav-link">Tjenester</a>
+        <a href="hjelp.html" class="nav-link">Hjelp</a>
+        <a href="om-oss.html" class="nav-link">Om oss</a>
     </div>
 
     <div class="info-section">
@@ -84,37 +95,28 @@
     </div>
     <div class="modal" id="service-selection-modal">
         <div class="modal-content">
-            <div>
-                <h1>
-                    Tjenester for kandidaten
-                </h1>
-                <div class="separator"></div>
-                <div class="service-selection-container" id="service-selection-container">
-                    <!-- <div class="modal-service-option">
-                        <img class="modal-service-icon" src="images/search-icon.svg" />
-                        <div id="VARIABLE">Arbeid</div>
-                        <img class="modal-checkbox" src="images/checkbox-unchecked.svg" />
-                    </div>
-                    <div class="modal-service-option">
-                        <img class="modal-service-icon" src="images/search-icon.svg" />
-                        <div id="VARIABLE">Arbeid</div>
-                        <img class="modal-checkbox" src="images/checkbox-unchecked.svg" />
-                    </div> -->
+            <div class="modal-top">
+                <div>
+                    <h1>Rediger tjenester</h1>
                 </div>
+                <img class="sidenav-exit" onclick="closeModal('service-selection-modal')" src="images/exit-blue.svg" />
             </div>
-            <span onclick="closeModal('service-selection-modal')" class="close">&times;</span>
+            <p>Rediger tjenester for denne spesifikke kandidaten.</p>
+            <div class="service-selection-container" id="service-selection-container">
+                <!-- Content added programatically -->
+            </div>
         </div>
     </div>
     <div class="modal" id="order-confrmation-modal">
         <div class="modal-content">
-            <div>
+            <div class="modal-top">
                 <h1 style="font-size: 1.2rem;">Takk for din bestilling!</h1>
-                <p class="info-text">
-                    En bekreftelsese-post har blitt sendt til din-epost@bedrift.no. Om du ønsker å legge til informasjon, kan du svare på denne e-posten eller ta kontakt via kontakt-skjemeat. Vennligst oppgi bestillingsnummeret ved framtidige hendvendelser:
-                </p>
-                <h2>#28503</h2>
+                <img class="sidenav-exit" onclick="closeModal('order-confrmation-modal')" src="images/exit-blue.svg" />
             </div>
-            <span onclick="closeModal('order-confrmation-modal')" class="close">&times;</span>
+            <p class="info-text">
+                En bekreftelsese-post har blitt sendt til din-epost@bedrift.no. Om du ønsker å legge til informasjon, kan du svare på denne e-posten eller ta kontakt via kontakt-skjemeat. Vennligst oppgi bestillingsnummeret ved framtidige hendvendelser:
+            </p>
+            <h2>#28503</h2>
         </div>
     </div>
     <div class="info-section" style="margin-top: 30px;">
@@ -144,7 +146,7 @@
         <div class="bestill-error-message" id="bestill-error-message"></div>
     </div>
 
-    <div class="order-table section" style="grid-template-columns: repeat(4, 1fr);" id="receipt-table">
+    <div class="order-table section" style="grid-template-columns: repeat(4, 1fr); margin-top: 40px;" id="receipt-table">
         <div class="table-top" style="border-top-left-radius: 25px"><b>Tjeneste</b></div>
         <div class="table-top"><b>Antall</b></div>
         <div class="table-top"><b>Stk. pris</b></div>
@@ -179,27 +181,23 @@
             </div>
         </div>
         <div style="margin-top: 20px">
+            <!-- Start of HubSpot code snippet -->
+            <div class="cookie-button" id="hs_show_banner_button"
+            onClick="(function(){
+            var _hsp = window._hsp = window._hsp || [];
+            _hsp.push(['showBanner']);
+            })()"
+            >
+                Endre cookie-instillinger
+            </div>
+            <!-- End of HubSpot code snippet -->
+        </div>
+        <div style="margin-top: 20px">
             ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt.
         </div>
     </div>
 
     <div class="is-mobile"></div>
-    
-    <!-- Start of HubSpot code snippet -->
-    <button type="button" id="hs_show_banner_button"
-    style="background-color: #458FF6; border: 1px solid #458FF6;
-           border-radius: 3px; padding: 10px 16px; text-decoration: none; color: #fff;
-           font-family: inherit; font-size: inherit; font-weight: normal; line-height: inherit;
-           text-align: left; text-shadow: none;"
-    onClick="(function(){
-      var _hsp = window._hsp = window._hsp || [];
-      _hsp.push(['showBanner']);
-    })()"
-    >
-    Cookie Settings
-    </button>
-    
-    <!-- End of HubSpot code snippet -->
 </body>
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26579858.js"></script>

@@ -47,4 +47,21 @@
         padding: 0 20px;
         margin-top: 20px;
     }
+
+    .offers-card-container {
+        display: none;
+    }
+
+    .offer-card {
+        background-color: white;
+        padding: 0;
+        width: 75vw;
+        max-width: none;
+        box-shadow: none;
+        margin: auto;
+    }
+
+    .offers-button {
+        padding: 0 0 25px 0;
+    }
 }
