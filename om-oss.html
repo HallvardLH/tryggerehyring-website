@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Om oss | Tryggere hyring</title>
+        <title>Om oss | Tryggerehyring.no</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/nav.css" rel="stylesheet" type="text/css">
@@ -17,62 +17,64 @@
         <link href="css/footer.css" rel="stylesheet" type="text/css">
     </head>
 <body>
-    <div class="top-nav" id="navbar">
-        <div class="logo">
-            <img class="logo-img" src="images/logo.svg" />
-            <div class="logo-text">Tryggerehyring.no</div>
+    <div class="content-container">
+        <div class="top-nav" id="navbar">
+            <div class="logo">
+                <img class="logo-img" src="images/logo.svg" />
+                <div class="logo-text">Tryggerehyring.no</div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Hjem</a>
+                <a href="bestill.html" class="nav-link">Bestill</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+                <a href="tjenester.html" class="nav-link">Tjenester</a>
+                <a href="hjelp.html" class="nav-link">Hjelp</a>
+                <b><a href="om-oss.html" class="nav-link">Om oss</a></b>
+            </div>
+            <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
+                <img src="images/hamburger.svg" />
+            </div>
         </div>
-        <div class="nav-links">
+
+        <div class="sidenav" id="sidenav">
+            <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
             <a href="index.html" class="nav-link">Hjem</a>
             <a href="bestill.html" class="nav-link">Bestill</a>
             <a href="kontakt.html" class="nav-link">Kontakt</a>
             <a href="tjenester.html" class="nav-link">Tjenester</a>
             <a href="hjelp.html" class="nav-link">Hjelp</a>
-            <b><a href="om-oss.html" class="nav-link">Om oss</a></b>
+            <a href="om-oss.html" class="nav-link">Om oss</a>
         </div>
-        <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
-            <img src="images/hamburger.svg" />
-        </div>
-    </div>
 
-    <div class="sidenav" id="sidenav">
-        <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
-        <a href="index.html" class="nav-link">Hjem</a>
-        <a href="bestill.html" class="nav-link">Bestill</a>
-        <a href="kontakt.html" class="nav-link">Kontakt</a>
-        <a href="tjenester.html" class="nav-link">Tjenester</a>
-        <a href="hjelp.html" class="nav-link">Hjelp</a>
-        <a href="om-oss.html" class="nav-link">Om oss</a>
-    </div>
-
-    <div class="info-section mobile-reverse-grid">
-        <div class="info-left">
-            <h1 class="info-header">
-                Hvorfor er det viktig med bakgrunnsjekk?
-            </h1>
-            <div class="separator"></div>
-            <div class="info-text">
-                <p>Vi i tryggerehyring.no ønsker at alle arbeidsgivere skal være sikker på at de ansetter rett kandidat. Å ansette feil person er kostbart. Vårt mål er å utføre omfattende bakgrunnsjekker for å verifisere at informasjonen som er oppgitt av kandidaten er riktig, og for å avdekke annen informasjon som kan være problematisk for rollen.</p>
-                <p>De vanligste problemene vi oppdager er feil informasjon i forhold til tidligere arbeidsforhold. Vi ser blant annet feil datoer, misledende arbeidstittler, upresise arbeidsoppgaver, og i verste fall helt forfalskede arbeidserfaringer.</p>
-                <p>Vårt mål er at både arbeidsgivere og kandidater skal bli positivt påvirket av bakgrunnsjekkene våres. For arbeidsgivere er det viktig å ansette rett person, men det er også viktig at kandidater som oppgir presis informasjon ikke skal konkurrere med kandidater som har oppgitt feil informasjon.</p>
+        <div class="info-section mobile-reverse-grid">
+            <div class="info-left">
+                <h1 class="info-header">
+                    Hvorfor er det viktig med bakgrunnsjekk?
+                </h1>
+                <div class="separator"></div>
+                <div class="info-text">
+                    <p>Vi i tryggerehyring.no ønsker at alle arbeidsgivere skal være sikker på at de ansetter rett kandidat. Å ansette feil person er kostbart. Vårt mål er å utføre omfattende bakgrunnsjekker for å verifisere at informasjonen som er oppgitt av kandidaten er riktig, og for å avdekke annen informasjon som kan være problematisk for rollen.</p>
+                    <p>De vanligste problemene vi oppdager er feil informasjon i forhold til tidligere arbeidsforhold. Vi ser blant annet feil datoer, misledende arbeidstittler, upresise arbeidsoppgaver, og i verste fall helt forfalskede arbeidserfaringer.</p>
+                    <p>Vårt mål er at både arbeidsgivere og kandidater skal bli positivt påvirket av bakgrunnsjekkene våres. For arbeidsgivere er det viktig å ansette rett person, men det er også viktig at kandidater som oppgir presis informasjon ikke skal konkurrere med kandidater som har oppgitt feil informasjon.</p>
+                </div>
+            </div>
+            <div class="info-right">
+                <img class="info-image" src="images/generic-image-7.svg" />
             </div>
         </div>
-        <div class="info-right">
-            <img class="info-image" src="images/generic-image-7.svg" />
-        </div>
-    </div>
 
-    <div class="info-section">
-        <div class="info-right">
-            <img class="info-image" src="images/generic-image-8.svg" />
-        </div>
-        <div class="info-left">
-            <h1 class="info-header">
-                Et team av sikkerhetsspesialister og utviklere
-            </h1>
-            <div class="separator"></div>
-            <div class="info-text">
-                <p>I tryggerehyring.no har vi et bredt spekter av sikkerhetsspesialister og utviklere. Våre sikkerhetsspesialister er de som utfører bakgrunnsjekkene, mens utviklerne lager interne verktøy til bakgrunnsjekkene. Kontoret vårt er i Bergen, men vi samarbeider med konsulenter fra hele Norge.</p>
+        <div class="info-section">
+            <div class="info-right">
+                <img class="info-image" src="images/generic-image-8.svg" />
+            </div>
+            <div class="info-left">
+                <h1 class="info-header">
+                    Et team av sikkerhetsspesialister og utviklere
+                </h1>
+                <div class="separator"></div>
+                <div class="info-text">
+                    <p>I tryggerehyring.no har vi et bredt spekter av sikkerhetsspesialister og utviklere. Våre sikkerhetsspesialister er de som utfører bakgrunnsjekkene, mens utviklerne lager interne verktøy til bakgrunnsjekkene. Kontoret vårt er i Bergen, men vi samarbeider med konsulenter fra hele Norge.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -96,7 +98,7 @@
             <div>
                 <div class="footer-title">Bedrift</div>
                 <a href="om-oss.html" class="footer-link">Om oss</a><br />
-                <a href="" class="footer-link">Våre kunder</a>
+                <a href="bestill.html" class="footer-link">Bestill</a>
             </div>
             <div>
                 <div class="footer-title">Hjelp</div>

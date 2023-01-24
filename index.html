@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tryggere hyring</title>
+    <title>Tryggerehyring.no</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/nav.css" rel="stylesheet" type="text/css">
@@ -17,354 +17,355 @@
 </head>
 <script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26579858.js"></script>
 <body>
-
-    <div class="top-nav" id="navbar">
-        <div class="logo">
-            <img class="logo-img" src="images/logo.svg" />
-            <div class="logo-text">Tryggerehyring.no</div>
+    <div class="content-container">
+        <div class="top-nav" id="navbar">
+            <div class="logo">
+                <img class="logo-img" src="images/logo.svg" />
+                <div class="logo-text">Tryggerehyring.no</div>
+            </div>
+            <div class="nav-links">
+                <b><a href="index.html" class="nav-link">Hjem</a></b>
+                <a href="bestill.html" class="nav-link">Bestill</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+                <a href="tjenester.html" class="nav-link">Tjenester</a>
+                <a href="hjelp.html" class="nav-link">Hjelp</a>
+                <a href="om-oss.html" class="nav-link">Om oss</a>
+            </div>
+            <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
+                <img src="images/hamburger.svg" />
+            </div>
         </div>
-        <div class="nav-links">
-            <b><a href="index.html" class="nav-link">Hjem</a></b>
+
+        <div class="sidenav" id="sidenav">
+            <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
+            <a href="index.html" class="nav-link">Hjem</a>
             <a href="bestill.html" class="nav-link">Bestill</a>
             <a href="kontakt.html" class="nav-link">Kontakt</a>
             <a href="tjenester.html" class="nav-link">Tjenester</a>
             <a href="hjelp.html" class="nav-link">Hjelp</a>
             <a href="om-oss.html" class="nav-link">Om oss</a>
         </div>
-        <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
-            <img src="images/hamburger.svg" />
+
+        <div class="info-section mobile-reverse-grid">
+            <div class="info-left">
+                <h1 class="info-header">
+                    Omfattende bakgrunnssjekker
+                </h1>
+                <div class="info-text">
+                    Tryggerehyring.no tilbyr skreddersydde bakgrunnssjekker på jobbkandidater.
+                </div>
+                <button class="filled-button" onclick="window.location.href='bestill.html'">
+                    Bestill
+                </button>
+            </div>
+            <div class="info-right">
+                <img class="info-image" src="images/generic-image-1.svg" />
+            </div>
+        </div>
+
+        <div class="offers-section">
+            <div class="offers-top-container">
+                <h1>
+                    Hva vi tilbyr
+                </h1>
+                <div class="separator"></div>
+                <div class="offers-description">
+                    Hos oss kan du skreddersy bakgrunnsjekken til å inneholde det du måtte ønske.<br /> Her har vi en liste over noen av tjenestene vi tilbyr.
+                </div>
+            </div>
+            <div id="slider" class="swipe offers-card-container-mobile">
+                <div class="swipe-wrap">
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/arbeid.svg">
+                            <h2 class="card-title">
+                                Arbeid
+                            </h2>
+                            <div class="card-text">
+                                Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/utdanning.svg">
+                            <h2 class="card-title">
+                                Utdanning
+                            </h2>
+                            <div class="card-text">
+                                Vi kan verifisere grader, vintemål og karakterutskrifter
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/sertifikat.svg">
+                            <h2 class="card-title">
+                                Sertifikat
+                            </h2>
+                            <div class="card-text">
+                                Verifisering av førerkort, lisenser og andre autoriseringer
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/mediesok.svg">
+                            <h2 class="card-title">
+                                Mediesøk
+                            </h2>
+                            <div class="card-text">
+                                Vi undersøker sosiale medier og andre offentlige databaser
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/referansekontroll.svg">
+                            <h2 class="card-title">
+                                Referansekontroll
+                            </h2>
+                            <div class="card-text">
+                                Vi dobbeltsjekker at referansene er ekte, og vi kan gjennomføre referanseintervju
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/identitet.svg">
+                            <h2 class="card-title">
+                                Identitet
+                            </h2>
+                            <div class="card-text">
+                                Valideringssjekk av alle typer ID-dokument
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/arbeid.svg">
+                            <h2 class="card-title">
+                                Læringsinteresser
+                            </h2>
+                            <div class="card-text">
+                                Vi finner roller og eierskap i norske og utelandske bedrifter
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/utdanning.svg">
+                            <h2 class="card-title">
+                                Adresse
+                            </h2>
+                            <div class="card-text">
+                                Verifisering av oppgitt adresse
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/sertifikat.svg">
+                            <h2 class="card-title">
+                                Kredittsjekk
+                            </h2>
+                            <div class="card-text">
+                                Vi gjennmfører en kredittsjekk av finansiell historikk og betalingsanmerkninger
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/mediesok.svg">
+                            <h2 class="card-title">
+                                Lønnsbekreftelse
+                            </h2>
+                            <div class="card-text">
+                                Vi kan verifisere tidligere lønn
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/referansekontroll.svg">
+                            <h2 class="card-title">
+                                Globale sanksjoner
+                            </h2>
+                            <div class="card-text">
+                                Vi leter gjennom globale databaser for å finne internasjonalt utstedte sanksjoner.
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="offer-card">
+                            <img class="offer-icon" src="images/identitet.svg">
+                            <h2 class="card-title">
+                                Politiattest
+                            </h2>
+                            <div class="card-text">
+                                Vi kan hjelpe kandidaten med å søke om politiattest
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slideshow-controls">
+                    <img id="prev" src="images/arrow-left.svg" />
+                    <img id="next" src="images/arrow-right.svg" />
+                </div>
+            </div>
+            <div class="offers-card-container">
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/arbeid.svg">
+                    <h2 class="card-title">
+                        Arbeid
+                    </h2>
+                    <div class="card-text">
+                        Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/utdanning.svg">
+                    <h2 class="card-title">
+                        Utdanning
+                    </h2>
+                    <div class="card-text">
+                        Vi kan verifisere grader, vintemål og karakterutskrifter
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/sertifikat.svg">
+                    <h2 class="card-title">
+                        Sertifikat
+                    </h2>
+                    <div class="card-text">
+                        Verifisering av førerkort, lisenser og andre autoriseringer
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/mediesok.svg">
+                    <h2 class="card-title">
+                        Mediesøk
+                    </h2>
+                    <div class="card-text">
+                        Vi undersøker sosiale medier og andre offentlige databaser
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/referansekontroll.svg">
+                    <h2 class="card-title">
+                        Referansekontroll
+                    </h2>
+                    <div class="card-text">
+                        Vi dobbeltsjekker at referansene er ekte, og vi kan gjennomføre referanseintervju
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/identitet.svg">
+                    <h2 class="card-title">
+                        Identitet
+                    </h2>
+                    <div class="card-text">
+                        Valideringssjekk av alle typer ID-dokument
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/arbeid.svg">
+                    <h2 class="card-title">
+                        Læringsinteresser
+                    </h2>
+                    <div class="card-text">
+                        Vi finner roller og eierskap i norske og utelandske bedrifter
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/utdanning.svg">
+                    <h2 class="card-title">
+                        Adresse
+                    </h2>
+                    <div class="card-text">
+                        Verifisering av oppgitt adresse
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/sertifikat.svg">
+                    <h2 class="card-title">
+                        Kredittsjekk
+                    </h2>
+                    <div class="card-text">
+                        Vi gjennmfører en kredittsjekk av finansiell historikk og betalingsanmerkninger
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/mediesok.svg">
+                    <h2 class="card-title">
+                        Lønnsbekreftelse
+                    </h2>
+                    <div class="card-text">
+                        Vi kan verifisere tidligere lønn
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/referansekontroll.svg">
+                    <h2 class="card-title">
+                        Globale sanksjoner
+                    </h2>
+                    <div class="card-text">
+                        Vi leter gjennom globale databaser for å finne internasjonalt utstedte sanksjoner.
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img class="offer-icon" src="images/identitet.svg">
+                    <h2 class="card-title">
+                        Politiattest
+                    </h2>
+                    <div class="card-text">
+                        Vi kan hjelpe kandidaten med å søke om politiattest
+                    </div>
+                </div>
+            </div>
+            <div class="offers-button">
+                <button class="unfilled-button" onclick="window.location.href='tjenester.html'">
+                    Lær mer
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-right">
+                <img class="info-image" src="images/generic-image-2.svg" />
+            </div>
+            <div class="info-left">
+                <h1 class="info-header">
+                    Stolt leverandør av bakgrunnssjekker
+                </h1>
+                <div class="info-text">
+                    Tryggerehyring.no leverer omfattende og rimelige bakgrunnssjekker. Våre sikkerhetsspesialister er stolte av jobben de gjør.
+                </div>
+                <button class="unfilled-button" onclick="window.location.href='om-oss.html'">
+                    Lær mer
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section mobile-reverse-grid">
+            <div class="info-left">
+                <h1 class="info-header">
+                    Kontakt oss for en uforpliktende samtale
+                </h1>
+                <div class="info-text">
+                    Vi er opptatt av god kundeservice, så vi er tigjenglige på e-post, telefon og chat! Spør oss om hva som helst, vi er klar for å hjelpe. Kundeservice er åpen 08:00 til 16:00 i ukedager.
+                </div>
+                <button class="unfilled-button" onclick="window.location.href='kontakt.html'">
+                    Kontakt oss
+                </button>
+            </div>
+            <div class="info-right">
+                <img class="info-image" src="images/generic-image-3.svg" />
+            </div>
         </div>
     </div>
 
-    <div class="sidenav" id="sidenav">
-        <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
-        <a href="index.html" class="nav-link">Hjem</a>
-        <a href="bestill.html" class="nav-link">Bestill</a>
-        <a href="kontakt.html" class="nav-link">Kontakt</a>
-        <a href="tjenester.html" class="nav-link">Tjenester</a>
-        <a href="hjelp.html" class="nav-link">Hjelp</a>
-        <a href="om-oss.html" class="nav-link">Om oss</a>
-    </div>
-
-    <div class="info-section mobile-reverse-grid">
-        <div class="info-left">
-            <h1 class="info-header">
-                Omfattende bakgrunnssjekker
-            </h1>
-            <div class="info-text">
-                Tryggerehyring.no tilbyr skreddersydde bakgrunnssjekker på jobbkandidater.
-            </div>
-            <button class="filled-button" onclick="window.location.href='bestill.html'">
-                Bestill
-            </button>
-        </div>
-        <div class="info-right">
-            <img class="info-image" src="images/generic-image-1.svg" />
-        </div>
-    </div>
-
-    <div class="offers-section">
-        <div class="offers-top-container">
-            <h1>
-                Hva vi tilbyr
-            </h1>
-            <div class="separator"></div>
-            <div class="offers-description">
-                Hos oss kan du skreddersy bakgrunnsjekken til å inneholde det du måtte ønske.<br /> Her har vi en liste over noen av tjenestene vi tilbyr.
-            </div>
-        </div>
-        <div id="slider" class="swipe offers-card-container-mobile">
-            <div class="swipe-wrap">
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/arbeid.svg">
-                        <h2 class="card-title">
-                            Arbeid
-                        </h2>
-                        <div class="card-text">
-                            Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/utdanning.svg">
-                        <h2 class="card-title">
-                            Utdanning
-                        </h2>
-                        <div class="card-text">
-                            Vi kan verifisere grader, vintemål og karakterutskrifter
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/sertifikat.svg">
-                        <h2 class="card-title">
-                            Sertifikat
-                        </h2>
-                        <div class="card-text">
-                            Verifisering av førerkort, lisenser og andre autoriseringer
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/mediesok.svg">
-                        <h2 class="card-title">
-                            Mediesøk
-                        </h2>
-                        <div class="card-text">
-                            Vi undersøker sosiale medier og andre offentlige databaser
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/referansekontroll.svg">
-                        <h2 class="card-title">
-                            Referansekontroll
-                        </h2>
-                        <div class="card-text">
-                            Vi dobbeltsjekker at referansene er ekte, og vi kan gjennomføre referanseintervju
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/identitet.svg">
-                        <h2 class="card-title">
-                            Identitet
-                        </h2>
-                        <div class="card-text">
-                            Valideringssjekk av alle typer ID-dokument
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/arbeid.svg">
-                        <h2 class="card-title">
-                            Læringsinteresser
-                        </h2>
-                        <div class="card-text">
-                            Vi finner roller og eierskap i norske og utelandske bedrifter
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/utdanning.svg">
-                        <h2 class="card-title">
-                            Adresse
-                        </h2>
-                        <div class="card-text">
-                            Verifisering av oppgitt adresse
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/sertifikat.svg">
-                        <h2 class="card-title">
-                            Kredittsjekk
-                        </h2>
-                        <div class="card-text">
-                            Vi gjennmfører en kredittsjekk av finansiell historikk og betalingsanmerkninger
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/mediesok.svg">
-                        <h2 class="card-title">
-                            Lønnsbekreftelse
-                        </h2>
-                        <div class="card-text">
-                            Vi kan verifisere tidligere lønn
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/referansekontroll.svg">
-                        <h2 class="card-title">
-                            Globale sanksjoner
-                        </h2>
-                        <div class="card-text">
-                            Vi leter gjennom globale databaser for å finne internasjonalt utstedte sanksjoner.
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="offer-card">
-                        <img class="offer-icon" src="images/identitet.svg">
-                        <h2 class="card-title">
-                            Politiattest
-                        </h2>
-                        <div class="card-text">
-                            Vi kan hjelpe kandidaten med å søke om politiattest
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slideshow-controls">
-                <img id="prev" src="images/arrow-left.svg" />
-                <img id="next" src="images/arrow-right.svg" />
-            </div>
-        </div>
-        <div class="offers-card-container">
-            <div class="offer-card">
-                <img class="offer-icon" src="images/arbeid.svg">
-                <h2 class="card-title">
-                    Arbeid
-                </h2>
-                <div class="card-text">
-                    Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/utdanning.svg">
-                <h2 class="card-title">
-                    Utdanning
-                </h2>
-                <div class="card-text">
-                    Vi kan verifisere grader, vintemål og karakterutskrifter
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/sertifikat.svg">
-                <h2 class="card-title">
-                    Sertifikat
-                </h2>
-                <div class="card-text">
-                    Verifisering av førerkort, lisenser og andre autoriseringer
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/mediesok.svg">
-                <h2 class="card-title">
-                    Mediesøk
-                </h2>
-                <div class="card-text">
-                    Vi undersøker sosiale medier og andre offentlige databaser
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/referansekontroll.svg">
-                <h2 class="card-title">
-                    Referansekontroll
-                </h2>
-                <div class="card-text">
-                    Vi dobbeltsjekker at referansene er ekte, og vi kan gjennomføre referanseintervju
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/identitet.svg">
-                <h2 class="card-title">
-                    Identitet
-                </h2>
-                <div class="card-text">
-                    Valideringssjekk av alle typer ID-dokument
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/arbeid.svg">
-                <h2 class="card-title">
-                    Læringsinteresser
-                </h2>
-                <div class="card-text">
-                    Vi finner roller og eierskap i norske og utelandske bedrifter
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/utdanning.svg">
-                <h2 class="card-title">
-                    Adresse
-                </h2>
-                <div class="card-text">
-                    Verifisering av oppgitt adresse
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/sertifikat.svg">
-                <h2 class="card-title">
-                    Kredittsjekk
-                </h2>
-                <div class="card-text">
-                    Vi gjennmfører en kredittsjekk av finansiell historikk og betalingsanmerkninger
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/mediesok.svg">
-                <h2 class="card-title">
-                    Lønnsbekreftelse
-                </h2>
-                <div class="card-text">
-                    Vi kan verifisere tidligere lønn
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/referansekontroll.svg">
-                <h2 class="card-title">
-                    Globale sanksjoner
-                </h2>
-                <div class="card-text">
-                    Vi leter gjennom globale databaser for å finne internasjonalt utstedte sanksjoner.
-                </div>
-            </div>
-            <div class="offer-card">
-                <img class="offer-icon" src="images/identitet.svg">
-                <h2 class="card-title">
-                    Politiattest
-                </h2>
-                <div class="card-text">
-                    Vi kan hjelpe kandidaten med å søke om politiattest
-                </div>
-            </div>
-        </div>
-        <div class="offers-button">
-            <button class="unfilled-button" onclick="window.location.href='tjenester.html'">
-                Lær mer
-            </button>
-        </div>
-    </div>
-
-    <div class="info-section">
-        <div class="info-right">
-            <img class="info-image" src="images/generic-image-2.svg" />
-        </div>
-        <div class="info-left">
-            <h1 class="info-header">
-                Stolt leverandør av bakgrunnssjekker
-            </h1>
-            <div class="info-text">
-                Tryggerehyring.no leverer omfattende og rimelige bakgrunnssjekker. Våre sikkerhetsspesialister er stolte av jobben de gjør.
-            </div>
-            <button class="unfilled-button" onclick="window.location.href='om-oss.html'">
-                Lær mer
-            </button>
-        </div>
-    </div>
-
-    <div class="info-section mobile-reverse-grid">
-        <div class="info-left">
-            <h1 class="info-header">
-                Kontakt oss for en uforpliktende samtale
-            </h1>
-            <div class="info-text">
-                Vi er opptatt av god kundeservice, så vi er tigjenglige på e-post, telefon og chat! Spør oss om hva som helst, vi er klar for å hjelpe. Kundeservice er åpen 08:00 til 16:00 i ukedager.
-            </div>
-            <button class="unfilled-button" onclick="window.location.href='kontakt.html'">
-                Kontakt oss
-            </button>
-        </div>
-        <div class="info-right">
-            <img class="info-image" src="images/generic-image-3.svg" />
-        </div>
-    </div>
-
-    <div class="footer-container">
+    <footer class="footer-container">
         <div class="footer-logo-mobile">
             <div class="logo footer-logo">
                 <img class="logo-img" src="images/logo-white.svg" />
@@ -383,7 +384,7 @@
             <div>
                 <div class="footer-title">Bedrift</div>
                 <a href="om-oss.html" class="footer-link">Om oss</a><br />
-                <a href="" class="footer-link">Våre kunder</a>
+                <a href="bestill.html" class="footer-link">Bestill</a>
             </div>
             <div>
                 <div class="footer-title">Hjelp</div>
@@ -406,7 +407,7 @@
         <div style="margin-top: 20px">
             ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt.
         </div>
-    </div>
+    </footer>
 
     <div class="is-mobile"></div>
 </body>

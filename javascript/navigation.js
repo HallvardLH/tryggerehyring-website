@@ -21,10 +21,14 @@ window.onscroll = function() {
         if (prevScrollpos > currentScrollPos) {
             document.getElementById("navbar").style.top = "0";
         } else {
-            document.getElementById("navbar").style.top = "-100px";
+            if (currentScrollPos > 500) {
+                document.getElementById("navbar").style.top = "-100px";
+            }
         }
         prevScrollpos = currentScrollPos;
     }
+    else if(currentScrollPos <= 500)
+        document.getElementById("navbar").style.top = "0";
 }
 
 /**
@@ -36,9 +40,5 @@ window.onscroll = function() {
  */
 function isMobile() {
     style = getComputedStyle(document.querySelector(".is-mobile"));
-    if(style.accentColor == "rgb(0, 128, 0)") {
-        return true
-    } else {
-        return false
-    }
+    return style.accentColor == "rgb(0, 128, 0)"
 }

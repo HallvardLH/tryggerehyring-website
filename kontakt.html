@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kontakt | Tryggere hyring</title>
+        <title>Kontakt | Tryggerehyring.no</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/nav.css" rel="stylesheet" type="text/css">
@@ -17,56 +17,56 @@
         <link href="css/footer.css" rel="stylesheet" type="text/css">
     </head>
 <body>
-    <div class="top-nav" id="navbar">
-        <div class="logo">
-            <img class="logo-img" src="images/logo.svg" />
-            <div class="logo-text">Tryggerehyring.no</div>
+    <div class="content-container">
+        <div class="top-nav" id="navbar">
+            <div class="logo">
+                <img class="logo-img" src="images/logo.svg" />
+                <div class="logo-text">Tryggerehyring.no</div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Hjem</a>
+                <a href="bestill.html" class="nav-link">Bestill</a>
+                <b><a href="kontakt.html" class="nav-link">Kontakt</a></b>
+                <a href="tjenester.html" class="nav-link">Tjenester</a>
+                <a href="hjelp.html" class="nav-link">Hjelp</a>
+                <a href="om-oss.html" class="nav-link">Om oss</a>
+            </div>
+            <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
+                <img src="images/hamburger.svg" />
+            </div>
         </div>
-        <div class="nav-links">
+        <div class="sidenav" id="sidenav">
+            <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
             <a href="index.html" class="nav-link">Hjem</a>
             <a href="bestill.html" class="nav-link">Bestill</a>
-            <b><a href="kontakt.html" class="nav-link">Kontakt</a></b>
+            <a href="kontakt.html" class="nav-link">Kontakt</a>
             <a href="tjenester.html" class="nav-link">Tjenester</a>
             <a href="hjelp.html" class="nav-link">Hjelp</a>
             <a href="om-oss.html" class="nav-link">Om oss</a>
         </div>
-        <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
-            <img src="images/hamburger.svg" />
-        </div>
-    </div>
-
-    <div class="sidenav" id="sidenav">
-        <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
-        <a href="index.html" class="nav-link">Hjem</a>
-        <a href="bestill.html" class="nav-link">Bestill</a>
-        <a href="kontakt.html" class="nav-link">Kontakt</a>
-        <a href="tjenester.html" class="nav-link">Tjenester</a>
-        <a href="hjelp.html" class="nav-link">Hjelp</a>
-        <a href="om-oss.html" class="nav-link">Om oss</a>
-    </div>
-
-    <div class="info-section">
-        <div class="info-left">
-            <h1 class="info-header">
-                Har du spørsmål? Vår kontaktinfo finner du her.
-            </h1>
-            <div class="separator"></div>
-            <div class="info-text">
-                <p>For å legge inn en bestilling, kan du bruke vår nettportal, tryggerehyring.no/bestill.</p>
-                <p>Du kan også bestille via e-post. Bruk gjerne vår mal, den du kan laste ned her.</p>
-                <p>Om du har spørsmål angående en tidligere bestilling bør du legge til bestillingsnummeret. Det finner du i bekreftelsese-posten.</p>
-                <p>E-post:</p>
+        <div class="info-section">
+            <div class="info-left">
+                <h1 class="info-header">
+                    Har du spørsmål? Vår kontaktinfo finner du her.
+                </h1>
+                <div class="separator"></div>
+                <div class="info-text">
+                    <p>For å legge inn en bestilling, kan du bruke vår nettportal, tryggerehyring.no/bestill.</p>
+                    <p>Du kan også bestille via e-post. Bruk gjerne vår mal, den du kan laste ned her.</p>
+                    <p>Om du har spørsmål angående en tidligere bestilling bør du legge til bestillingsnummeret. Det finner du i bekreftelsese-posten.</p>
+                    <p>E-post:</p>
+                </div>
+                <div class="info-larger-text">
+                    <b>support@tryggerehyring.no</b>
+                </div>
             </div>
-            <div class="info-larger-text">
-                <b>support@tryggerehyring.no</b>
+            <div class="info-right">
+                <img class="info-image" src="images/generic-image-3.svg" />
             </div>
         </div>
-        <div class="info-right">
-            <img class="info-image" src="images/generic-image-3.svg" />
-        </div>
     </div>
 
-    <div class="footer-container">
+    <footer class="footer-container">
         <div class="footer-logo-mobile">
             <div class="logo footer-logo">
                 <img class="logo-img" src="images/logo-white.svg" />
@@ -85,7 +85,7 @@
             <div>
                 <div class="footer-title">Bedrift</div>
                 <a href="om-oss.html" class="footer-link">Om oss</a><br />
-                <a href="" class="footer-link">Våre kunder</a>
+                <a href="bestill.html" class="footer-link">Bestill</a>
             </div>
             <div>
                 <div class="footer-title">Hjelp</div>
@@ -108,7 +108,7 @@
         <div style="margin-top: 20px">
             ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt.
         </div>
-    </div>
+    </footer>
 
     <div class="is-mobile"></div>
 </body>

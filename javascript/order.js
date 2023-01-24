@@ -5,7 +5,9 @@ function order() {
 
     // ADD CODE FOR DISPLAYING ORDER CONFIRMATION MODAL
 
-    //prepareAndSendEmail();
+    prepareAndSendEmail();
+
+    openModal("order-confirmation-modal");
 }
 
 let errorRed = "solid #ff4c4c";

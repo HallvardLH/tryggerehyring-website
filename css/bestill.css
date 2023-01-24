@@ -11,10 +11,10 @@
     grid-template-columns: 1fr 0.2fr;
     width: 300px;
     max-width: 300px;
-    background-color: var(--highlight-color);
+    /* background-color: var(--highlight-color); */
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 0px 14px 10px 0px rgb(199 199 199 / 56%);
+    box-shadow: var(--light-shadow);
 }
 
 .checkbox-card-icon {
@@ -173,12 +173,16 @@
     .kandidat-info-input {
         border-bottom: none;
         resize: vertical;
-        width: 100%;
+        width: 90%;
         font-size: 0.95rem;
     }
 
     .kandidat-name-input:focus, .kandidat-info-input:focus, .sammendrag-input:focus {
         outline: none;
         border-bottom: none;
+    }
+
+    .checkbox-with-label-mobile {
+        flex-direction: row-reverse;
     }
 }

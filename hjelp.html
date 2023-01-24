@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hjelp | Tryggere hyring</title>
+        <title>Hjelp | Tryggerehyring.no</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/nav.css" rel="stylesheet" type="text/css">
@@ -17,77 +17,79 @@
         <link href="css/footer.css" rel="stylesheet" type="text/css">
     </head>
 <body>
-    <div class="top-nav" id="navbar">
-        <div class="logo">
-            <img class="logo-img" src="images/logo.svg" />
-            <div class="logo-text">Tryggerehyring.no</div>
+    <div class="content-container">
+        <div class="top-nav" id="navbar">
+            <div class="logo">
+                <img class="logo-img" src="images/logo.svg" />
+                <div class="logo-text">Tryggerehyring.no</div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Hjem</a>
+                <a href="bestill.html" class="nav-link">Bestill</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+                <a href="tjenester.html" class="nav-link">Tjenester</a>
+                <b><a href="hjelp.html" class="nav-link">Hjelp</a></b>
+                <a href="om-oss.html" class="nav-link">Om oss</a>
+            </div>
+            <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
+                <img src="images/hamburger.svg" />
+            </div>
         </div>
-        <div class="nav-links">
+
+        <div class="sidenav" id="sidenav">
+            <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
             <a href="index.html" class="nav-link">Hjem</a>
             <a href="bestill.html" class="nav-link">Bestill</a>
             <a href="kontakt.html" class="nav-link">Kontakt</a>
             <a href="tjenester.html" class="nav-link">Tjenester</a>
-            <b><a href="hjelp.html" class="nav-link">Hjelp</a></b>
+            <a href="hjelp.html" class="nav-link">Hjelp</a>
             <a href="om-oss.html" class="nav-link">Om oss</a>
         </div>
-        <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
-            <img src="images/hamburger.svg" />
-        </div>
-    </div>
 
-    <div class="sidenav" id="sidenav">
-        <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
-        <a href="index.html" class="nav-link">Hjem</a>
-        <a href="bestill.html" class="nav-link">Bestill</a>
-        <a href="kontakt.html" class="nav-link">Kontakt</a>
-        <a href="tjenester.html" class="nav-link">Tjenester</a>
-        <a href="hjelp.html" class="nav-link">Hjelp</a>
-        <a href="om-oss.html" class="nav-link">Om oss</a>
-    </div>
-
-    <div class="info-section">
-        <div class="info-left">
-            <h1 class="info-header">
-                Her finner du generell informasjon og svar på vanlige spørsmål
-            </h1>
-            <div class="separator"></div>
-            <div class="info-text">
-                <p>For å legge inn en bestilling, kan du bruke vår nettportal, <a href="bestill.html">tryggerehyring.no/bestill.</a></p>
-                <p>Om du har spørsmål du ikke finner svar på her kan du ta kontakt på e-post:</p>
+        <div class="info-section">
+            <div class="info-left">
+                <h1 class="info-header">
+                    Her finner du generell informasjon og svar på vanlige spørsmål
+                </h1>
+                <div class="separator"></div>
+                <div class="info-text">
+                    <p>For å legge inn en bestilling, kan du bruke vår nettportal, <a href="bestill.html">tryggerehyring.no/bestill.</a></p>
+                    <p>Om du har spørsmål du ikke finner svar på her kan du ta kontakt på e-post:</p>
+                </div>
+                <div class="info-larger-text">
+                    <b>support@tryggerehyring.no</b>
+                </div>
             </div>
-            <div class="info-larger-text">
-                <b>support@tryggerehyring.no</b>
+            <div class="info-right">
+                <img class="info-image" src="images/generic-image-6.svg" />
             </div>
         </div>
-        <div class="info-right">
-            <img class="info-image" src="images/generic-image-6.svg" />
-        </div>
-    </div>
 
-    <div class="info-section info-section-no-img">
-        <div class="info-left">
-            <h1 class="info-header">
-                Spørsmål og svar
-            </h1>
-            <div class="separator"></div>
-            <div class="info-text">
-                <p><b>Hvordan fungerer tryggerehyring.no i praksis?</b></p>
-                <p>På tryggerehyring.no legger du først inn en bestilling på en eller flere bakgrunnsjekker. I bestillingen legger du til informasjon om kandidaten som du ønsker en bakgrunnsjekk på. Det vil si alt som er nødvendig for at vi kan utføre bakgrunnsjekken. For eksempel, om vi skal sjekke arbeidsforhold, trenger vi navn og informasjon om arbeidsforholdet. Vanligvis holder det med en CV.</p> 
-                <p>Når vi har sjekket alt som blei lagt til i bestillingen, sender vi en rapport med våre funn.</p>
+        <div class="info-section info-section-no-img">
+            <div class="info-left">
+                <h1 class="info-header">
+                    Spørsmål og svar
+                </h1>
+                <div class="separator"></div>
+                <div class="info-text">
+                    <p><b>Hvordan fungerer tryggerehyring.no i praksis?</b></p>
+                    <p>På tryggerehyring.no legger du først inn en bestilling på en eller flere bakgrunnsjekker. I bestillingen legger du til informasjon om kandidaten som du ønsker en bakgrunnsjekk på. Det vil si alt som er nødvendig for at vi kan utføre bakgrunnsjekken. For eksempel, om vi skal sjekke arbeidsforhold, trenger vi navn og informasjon om arbeidsforholdet. Vanligvis holder det med en CV.</p> 
+                    <p>Når vi har sjekket alt som blei lagt til i bestillingen, sender vi en rapport med våre funn.</p>
 
-                <p><b>Hvordan fungerer en betaling?</b></p>
-                <p>Vi sender en faktura med 30 dagers betalingsfrist sammen med rapporten.</p>
+                    <p><b>Hvordan fungerer en betaling?</b></p>
+                    <p>Vi sender en faktura med 30 dagers betalingsfrist sammen med rapporten.</p>
 
-                <p><b>Hvor lang tid tar det før jeg mottar rapporten?</b></p>
-                <p>Vanligvis sender vi første utkast av rapporten innen en uke. Noen tjenester kan ta lengre tid å levere; disse blir lagt til i rapporten så fort de er ferdig.</p>
+                    <p><b>Hvor lang tid tar det før jeg mottar rapporten?</b></p>
+                    <p>Vanligvis sender vi første utkast av rapporten innen en uke. Noen tjenester kan ta lengre tid å levere; disse blir lagt til i rapporten så fort de er ferdig.</p>
 
-                <p><b>Hvor lenge oppbevarer dere personinformasjonen til kandidaten?</b></p>
-                <p>Vi følger lovpålagte frister i henold til sletting av informasjon. Personinformasjonen til en kandidat blir slettet fra våre systemer så fort rapporten er sendt.</p>
+                    <p><b>Hvor lenge oppbevarer dere personinformasjonen til kandidaten?</b></p>
+                    <p>Vi følger lovpålagte frister i henold til sletting av informasjon. Personinformasjonen til en kandidat blir slettet fra våre systemer så fort rapporten er sendt.</p>
+                </div>
             </div>
         </div>
     </div>
-    
-    <div class="footer-container">
+
+    <footer class="footer-container">
         <div class="footer-logo-mobile">
             <div class="logo footer-logo">
                 <img class="logo-img" src="images/logo-white.svg" />
@@ -106,7 +108,7 @@
             <div>
                 <div class="footer-title">Bedrift</div>
                 <a href="om-oss.html" class="footer-link">Om oss</a><br />
-                <a href="" class="footer-link">Våre kunder</a>
+                <a href="bestill.html" class="footer-link">Bestill</a>
             </div>
             <div>
                 <div class="footer-title">Hjelp</div>
@@ -129,7 +131,7 @@
         <div style="margin-top: 20px">
             ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt.
         </div>
-    </div>
+    </footer>
 
     <div class="is-mobile"></div>
 </body>

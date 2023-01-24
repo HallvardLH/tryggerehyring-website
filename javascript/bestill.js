@@ -135,7 +135,7 @@ const bestill = {
         }
     },
 
-    create_serivce: function(name, description) {
+    create_serivce: function(name, description, show_default) {
         let included = 0
         for (let i = 0; i < candidates.length; i++) {
             if (candidates[i].services.includes(name)) {
@@ -152,9 +152,14 @@ const bestill = {
             checkImage = "checkbox-minus.svg";
         }
 
+        styling = "";
+        if(show_default) {
+            styling = "style='background-color: var(--highlight-color)'";
+        }
+
         element = document.getElementById("tjenester-card-section");
         content = `
-        <div class="checkbox-card">
+        <div class="checkbox-card" id="${name}-checkbox-card" ${styling}>
             <h3>${name}</h3>
             <img class="checkbox-card-icon" src="images/search-icon.svg"/>
             <div class="checkbox-card-text">${description}</div>
@@ -166,7 +171,7 @@ const bestill = {
 
     create_all_services: function() {
         Object.keys(services).forEach(function(key) {
-            bestill.create_serivce(services[key].name, services[key].description);
+            bestill.create_serivce(services[key].name, services[key].description, services[key].default);
         });
     },
 
@@ -245,11 +250,11 @@ const bestill = {
     consent_checkbox: function() {
         if(this.consent_checked) {
             this.consent_checked = false;
-            document.getElementById("consent-checkbox").src = "images/checkbox-unchecked.svg"
+            document.getElementById("consent-checkbox").src = "images/checkbox-unchecked.svg";
         }
         else {
             this.consent_checked = true;
-            document.getElementById("consent-checkbox").src = "images/checkbox-checked.svg"
+            document.getElementById("consent-checkbox").src = "images/checkbox-checked.svg";
         }
     },
 

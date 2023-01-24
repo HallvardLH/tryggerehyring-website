@@ -54,11 +54,8 @@ a:hover {
 .sidenav-exit {
     width: 25px;
     height: 25px;
+    margin: 20px 0;
     cursor: pointer;
-}
-
-.sidenav-exit:hover, .checkbox-icon:hover {
-    transform: scale(1.1);
 }
 
 .sidenav {
@@ -78,12 +75,19 @@ a:hover {
     transition: 0.5s;
     line-height: 2.5rem;
     white-space: nowrap;
+    gap: 5px;
 }
 
 .sidenav a {
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 700px) { /* Desktop layout */
+    .sidenav-exit:hover, .checkbox-icon:hover {
+        transform: scale(1.1);
+    }
 }
 
 @media only screen and (max-width: 700px) { /* Mobile layout */

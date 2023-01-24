@@ -161,10 +161,13 @@ function updateCheckbox(name, checked, modal) {
 
     if(checked == true) {
         document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-checked.svg";
+        document.getElementById(`${name}-checkbox-card`).style.backgroundColor = "var(--highlight-color)";
     } else if (checked == false) {
         document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-unchecked.svg";
+        document.getElementById(`${name}-checkbox-card`).style.backgroundColor = "white";
     } else {
         document.getElementById(`${name}${modal}-checkbox`).src = "images/checkbox-minus.svg";
+        document.getElementById(`${name}-checkbox-card`).style.backgroundColor = "var(--highlight-color)";
     }
 }
 
@@ -202,6 +205,7 @@ function buildServices(name, description) {
         const name = services[key].name;
         const price = services[key].price;
         const description = services[key].description_long;
+        const default_state = services[key].default;
 
         content = `
         <div class="display-card">

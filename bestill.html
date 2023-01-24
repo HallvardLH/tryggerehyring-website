@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bestill | Tryggere hyring</title>
+    <title>Bestill | Tryggerehyring.no</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/nav.css" rel="stylesheet" type="text/css">
@@ -15,145 +15,147 @@
     <link href="css/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="top-nav" id="navbar">
-        <div class="logo">
-            <img class="logo-img" src="images/logo.svg" />
-            <div class="logo-text">Tryggerehyring.no</div>
+    <div class="content-container">
+        <div class="top-nav" id="navbar">
+            <div class="logo">
+                <img class="logo-img" src="images/logo.svg" />
+                <div class="logo-text">Tryggerehyring.no</div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Hjem</a>
+                <b><a href="bestill.html" class="nav-link">Bestill</a></b>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+                <a href="tjenester.html" class="nav-link">Tjenester</a>
+                <a href="hjelp.html" class="nav-link">Hjelp</a>
+                <a href="om-oss.html" class="nav-link">Om oss</a>
+            </div>
+            <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
+                <img src="images/hamburger.svg" />
+            </div>
         </div>
-        <div class="nav-links">
+
+        <div class="sidenav" id="sidenav">
+            <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
             <a href="index.html" class="nav-link">Hjem</a>
-            <b><a href="bestill.html" class="nav-link">Bestill</a></b>
+            <a href="bestill.html" class="nav-link">Bestill</a>
             <a href="kontakt.html" class="nav-link">Kontakt</a>
             <a href="tjenester.html" class="nav-link">Tjenester</a>
             <a href="hjelp.html" class="nav-link">Hjelp</a>
             <a href="om-oss.html" class="nav-link">Om oss</a>
         </div>
-        <div class="hamburger-container" onclick="navigation.toggle_sidenav()">
-            <img src="images/hamburger.svg" />
+
+        <div class="info-section">
+            <div class="info-left">
+                <h1 class="info-header">
+                    Før du bestiller
+                </h1>
+                <div class="separator"></div>
+                <div class="info-text">
+                    <p>Her kan du bestille bakgrunnssjekk for 1 eller flere jobbkandidater. Det er og mulig å bestille via <a href="">kontakt-skjemaet</a>.</p>
+                    <p>Vi leverer 1 rapport per kandidat i løpet av en uke.</p>
+                    <p><b>Husk at deling av personlig informasjon krever samtykke fra jobbkandidaten.</b></p>
+                </div>
+            </div>
+            <div class="info-right">
+                <img class="info-image" src="images/generic-image-4.svg" />
+            </div>
         </div>
-    </div>
 
-    <div class="sidenav" id="sidenav">
-        <img class="sidenav-exit" onclick="navigation.toggle_sidenav()" src="images/exit.svg" />
-        <a href="index.html" class="nav-link">Hjem</a>
-        <a href="bestill.html" class="nav-link">Bestill</a>
-        <a href="kontakt.html" class="nav-link">Kontakt</a>
-        <a href="tjenester.html" class="nav-link">Tjenester</a>
-        <a href="hjelp.html" class="nav-link">Hjelp</a>
-        <a href="om-oss.html" class="nav-link">Om oss</a>
-    </div>
-
-    <div class="info-section">
-        <div class="info-left">
+        <div class="section">
             <h1 class="info-header">
-                Før du bestiller
+                Velg tjenester
             </h1>
             <div class="separator"></div>
-            <div class="info-text">
-                <p>Her kan du bestille bakgrunnssjekk for 1 eller flere jobbkandidater. Det er og mulig å bestille via <a href="">kontakt-skjemaet</a>.</p>
-                <p>Vi leverer 1 rapport per kandidat i løpet av en uke.</p>
-                <p><b>Husk at deling av personlig informasjon krever samtykke fra jobbkandidaten.</b></p>
+            <div class="checkbox-with-label checkbox-with-label-mobile">
+                <div>Velg alle tjenester</div>
+                <img class="checkbox-icon" onclick="selectAllServices()" id="check-all-checkbox" src="images/checkbox-unchecked.svg"/>
             </div>
-        </div>
-        <div class="info-right">
-            <img class="info-image" src="images/generic-image-4.svg" />
-        </div>
-    </div>
-
-    <div class="section">
-        <h1 class="info-header">
-            Velg tjenester
-        </h1>
-        <div class="separator"></div>
-        <div class="checkbox-with-label">
-            <div>Velg alle tjenester</div>
-            <img class="checkbox-icon" onclick="selectAllServices()" id="check-all-checkbox" src="images/checkbox-unchecked.svg"/>
-        </div>
-        <div class="tjenester-card-section" id="tjenester-card-section">
-            <!-- Content added programatically -->
-        </div>
-    </div>
-
-    <div class="section">
-        <h1 class="info-header">
-            Informasjon om kandidaten
-        </h1>
-        <div class="separator"></div>
-        <div class="order-table table-desktop" style="grid-template-columns: 150px repeat(4, 1fr);" id="kandidat-table-desktop">
-                <div class="table-top" style="border-top-left-radius: 25px"><b>Navn*</b></div>
-                <div class="table-top"><b>Ytterlig informasjon</b></div>
-                <div class="table-top"><b>Dokument</b></div>
-                <div class="table-top"><b>Tjenester</b></div>
-                <div class="table-top" style="border-top-right-radius: 25px"><b>Fjern kandidat</b></div>
-        </div>
-        <div class="table-mobile" id="kandidat-table-mobile">
-
-        </div>
-        <button onclick="addNewCandidate()" class="unfilled-button" style="border-radius: 15px; margin-top: 30px">
-            Legg til kandidat
-        </button>
-    </div>
-    <div class="modal" id="service-selection-modal">
-        <div class="modal-content">
-            <div class="modal-top">
-                <div>
-                    <h1>Rediger tjenester</h1>
-                </div>
-                <img class="sidenav-exit" onclick="closeModal('service-selection-modal')" src="images/exit-blue.svg" />
-            </div>
-            <p>Rediger tjenester for denne spesifikke kandidaten.</p>
-            <div class="service-selection-container" id="service-selection-container">
+            <div class="tjenester-card-section" id="tjenester-card-section">
                 <!-- Content added programatically -->
             </div>
         </div>
-    </div>
-    <div class="modal" id="order-confrmation-modal">
-        <div class="modal-content">
-            <div class="modal-top">
-                <h1 style="font-size: 1.2rem;">Takk for din bestilling!</h1>
-                <img class="sidenav-exit" onclick="closeModal('order-confrmation-modal')" src="images/exit-blue.svg" />
-            </div>
-            <p class="info-text">
-                En bekreftelsese-post har blitt sendt til din-epost@bedrift.no. Om du ønsker å legge til informasjon, kan du svare på denne e-posten eller ta kontakt via kontakt-skjemeat. Vennligst oppgi bestillingsnummeret ved framtidige hendvendelser:
-            </p>
-            <h2>#28503</h2>
-        </div>
-    </div>
-    <div class="info-section" style="margin-top: 30px;">
-        <div class="info-left">
+
+        <div class="section">
             <h1 class="info-header">
-                Sammendrag
+                Informasjon om kandidaten
             </h1>
             <div class="separator"></div>
-            <p class="sammendrag-small-text">Skriv inn ditt navn eller navnet på bedriften her:*</p>
-            <input class="sammendrag-input" id="summary-name-input" type="text" placeholder="Navn Etternavn"/>
-            <p class="sammendrag-small-text">Vi sender ut faktura sammen med rapporten til mailen under:*</p>
-            <input class="sammendrag-input" id="summary-email-input" type="text" placeholder="din-epost@bedrift.no"/>
-            <p class="sammendrag-small-text">Jeg har fått samtykke til deling av personlig informasjon*:</p>
-            <div class="checkbox-with-label">
-                <div>Ja</div>
-                <img class="checkbox-icon" onclick="bestill.consent_checkbox()" id="consent-checkbox" src="images/checkbox-unchecked.svg"/>
+            <div class="order-table table-desktop" style="grid-template-columns: 150px repeat(4, 1fr);" id="kandidat-table-desktop">
+                    <div class="table-top" style="border-top-left-radius: 25px"><b>Navn*</b></div>
+                    <div class="table-top"><b>Ytterlig informasjon</b></div>
+                    <div class="table-top"><b>Dokument</b></div>
+                    <div class="table-top"><b>Tjenester</b></div>
+                    <div class="table-top" style="border-top-right-radius: 25px"><b>Fjern kandidat</b></div>
             </div>
-            <p class="sammendrag-small-text">Prisen for alle rapportene blir:</p>
-            <div class="sammendrag-big-text" id="price-estimate-display">0 NOK</div>
-            <button onclick="order()" class="filled-button" style="border-radius: 15px;">
-                Bestill
+            <div class="table-mobile" id="kandidat-table-mobile">
+
+            </div>
+            <button onclick="addNewCandidate()" class="unfilled-button" style="border-radius: 15px; margin-top: 30px">
+                Legg til kandidat
             </button>
         </div>
-        <div class="info-right">
-            <img class="info-image" src="images/generic-image-5.svg" />
+        <div class="modal" id="service-selection-modal">
+            <div class="modal-content">
+                <div class="modal-top">
+                    <div>
+                        <h1>Rediger tjenester</h1>
+                    </div>
+                    <img class="sidenav-exit" onclick="closeModal('service-selection-modal')" src="images/exit-blue.svg" />
+                </div>
+                <p>Rediger tjenester for denne spesifikke kandidaten.</p>
+                <div class="service-selection-container" id="service-selection-container">
+                    <!-- Content added programatically -->
+                </div>
+            </div>
         </div>
-        <div class="bestill-error-message" id="bestill-error-message"></div>
+        <div class="modal" id="order-confirmation-modal">
+            <div class="modal-content">
+                <div class="modal-top">
+                    <h1 style="font-size: 1.2rem;">Takk for din bestilling!</h1>
+                    <img class="sidenav-exit" onclick="closeModal('order-confirmation-modal')" src="images/exit-blue.svg" />
+                </div>
+                <p class="info-text">
+                    En bekreftelsese-post har blitt sendt til din-epost@bedrift.no. Om du ønsker å legge til informasjon, kan du svare på denne e-posten eller ta kontakt via kontakt-skjemeat. Vennligst oppgi bestillingsnummeret ved framtidige hendvendelser:
+                </p>
+                <h2 id="confirmation-code"></h2>
+            </div>
+        </div>
+        <div class="info-section" style="margin-top: 30px;">
+            <div class="info-left">
+                <h1 class="info-header">
+                    Sammendrag
+                </h1>
+                <div class="separator"></div>
+                <p class="sammendrag-small-text">Skriv inn ditt navn eller navnet på bedriften her:*</p>
+                <input class="sammendrag-input" id="summary-name-input" type="text" placeholder="Navn Etternavn"/>
+                <p class="sammendrag-small-text">Vi sender ut faktura sammen med rapporten til mailen under:*</p>
+                <input class="sammendrag-input" id="summary-email-input" type="text" placeholder="din-epost@bedrift.no"/>
+                <p class="sammendrag-small-text">Jeg har fått samtykke til deling av personlig informasjon*:</p>
+                <div class="checkbox-with-label">
+                    <div>Ja</div>
+                    <img class="checkbox-icon" onclick="bestill.consent_checkbox()" id="consent-checkbox" src="images/checkbox-unchecked.svg"/>
+                </div>
+                <p class="sammendrag-small-text">Prisen for alle rapportene blir:</p>
+                <div class="sammendrag-big-text" id="price-estimate-display">0 NOK</div>
+                <button onclick="order()" class="filled-button" style="border-radius: 15px;">
+                    Bestill
+                </button>
+            </div>
+            <div class="info-right">
+                <img class="info-image" src="images/generic-image-5.svg" />
+            </div>
+            <div class="bestill-error-message" id="bestill-error-message"></div>
+        </div>
+
+        <div class="order-table section" style="grid-template-columns: repeat(4, 1fr); margin-top: 40px;" id="receipt-table">
+            <div class="table-top" style="border-top-left-radius: 25px"><b>Tjeneste</b></div>
+            <div class="table-top"><b>Antall</b></div>
+            <div class="table-top"><b>Stk. pris</b></div>
+            <div class="table-top" style="border-top-right-radius: 25px"><b>Netto</b></div>
+        </div>
     </div>
 
-    <div class="order-table section" style="grid-template-columns: repeat(4, 1fr); margin-top: 40px;" id="receipt-table">
-        <div class="table-top" style="border-top-left-radius: 25px"><b>Tjeneste</b></div>
-        <div class="table-top"><b>Antall</b></div>
-        <div class="table-top"><b>Stk. pris</b></div>
-        <div class="table-top" style="border-top-right-radius: 25px"><b>Netto</b></div>
-    </div>
-
-    <div class="footer-container">
+    <footer class="footer-container">
         <div class="footer-logo-mobile">
             <div class="logo footer-logo">
                 <img class="logo-img" src="images/logo-white.svg" />
@@ -172,7 +174,7 @@
             <div>
                 <div class="footer-title">Bedrift</div>
                 <a href="om-oss.html" class="footer-link">Om oss</a><br />
-                <a href="" class="footer-link">Våre kunder</a>
+                <a href="bestill.html" class="footer-link">Bestill</a>
             </div>
             <div>
                 <div class="footer-title">Hjelp</div>
@@ -195,7 +197,7 @@
         <div style="margin-top: 20px">
             ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt.
         </div>
-    </div>
+    </footer>
 
     <div class="is-mobile"></div>
 </body>
