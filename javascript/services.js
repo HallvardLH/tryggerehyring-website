@@ -205,7 +205,6 @@ function buildServices(name, description) {
         const name = services[key].name;
         const price = services[key].price;
         const description = services[key].description_long;
-        const default_state = services[key].default;
 
         content = `
         <div class="display-card">
