@@ -57,7 +57,7 @@ let services = {
     },
     Kredittsjekk: {
         name: "Kredittsjekk",
-        description: "Vi gjennmfører en kredittsjekk av finansiell historikk og betalingsanmerkninger",
+        description: "Vi gjennomfører en kredittsjekk av finansiell historikk og betalingsanmerkninger",
         description_long: "Vi gjennomfører en kredittsjekk av finansiell historikk og betalingsanmerkninger. For å utføre ein kredittsjekk krever kredittselskapene ein søknad som må begrunnes. Kredittselskapene vurderer selv om det er nødvendig med ein kredittsjekk, og ofte krever det en god grunn.",
         price: 3500,
         default: false
