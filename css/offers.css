@@ -31,6 +31,12 @@
     box-shadow: var(--light-shadow);
 }
 
+.offer-icon {
+    /* Computes to var(--main-color) (#458FF6)
+       Coloring an svg is apparently not so easy */
+    filter: invert(46%) sepia(68%) saturate(730%) hue-rotate(182deg) brightness(101%) contrast(93%);
+}
+
 .card-text {
     color: var(--text-color)
 }
@@ -63,5 +69,10 @@
 
     .offers-button {
         padding: 0 0 25px 0;
+    }
+
+    .offer-icon {
+        /* Make the icons a bit larger on mobile */
+        width: 80px;
     }
 }
