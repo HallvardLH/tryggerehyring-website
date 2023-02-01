@@ -71,7 +71,7 @@
                 <img class="checkbox-icon" onclick="selectAllServices()" id="check-all-checkbox" src="images/checkbox-unchecked.svg"/>
             </div>
             <div class="tjenester-card-section" id="tjenester-card-section">
-                <!-- Content added programatically -->
+                <!-- Content added programmatically -->
             </div>
         </div>
 
@@ -104,7 +104,7 @@
                 </div>
                 <p>Rediger tjenester for denne spesifikke kandidaten.</p>
                 <div class="service-selection-container" id="service-selection-container">
-                    <!-- Content added programatically -->
+                    <!-- Content added programmatically -->
                 </div>
             </div>
         </div>
@@ -121,26 +121,26 @@
             </div>
         </div>
         <div class="info-section" style="margin-top: 30px;">
-            <div class="info-left">
+            <fieldset class="info-left">
                 <h1 class="info-header">
                     Sammendrag
                 </h1>
                 <div class="separator"></div>
-                <p class="sammendrag-small-text">Skriv inn ditt navn eller navnet på bedriften her:*</p>
-                <input class="sammendrag-input" id="summary-name-input" type="text" placeholder="Navn Etternavn"/>
-                <p class="sammendrag-small-text">Vi sender ut faktura sammen med rapporten til mailen under:*</p>
-                <input class="sammendrag-input" id="summary-email-input" type="text" placeholder="din-epost@bedrift.no"/>
-                <p class="sammendrag-small-text">Jeg har fått samtykke til deling av personlig informasjon*:</p>
+                <label for="customer-name" class="sammendrag-small-text">Skriv inn ditt navn eller navnet på bedriften her:*</label>
+                <input name="customer-name" class="sammendrag-input" id="summary-name-input" type="text" placeholder="Navn Etternavn"/>
+                <label for="customer-mail" class="sammendrag-small-text">Vi sender ut faktura sammen med rapporten til mailen under:*</label>
+                <input name="customer-mail" class="sammendrag-input" id="summary-email-input" type="text" placeholder="din-epost@bedrift.no"/>
+                <p class="sammendrag-small-text" style="margin-top: 0">Jeg har fått samtykke til deling av personlig informasjon*:</p>
                 <div class="checkbox-with-label">
-                    <div>Ja</div>
-                    <img class="checkbox-icon" onclick="bestill.consent_checkbox()" id="consent-checkbox" src="images/checkbox-unchecked.svg"/>
+                    <label for="consent-checkbox">Ja</label>
+                    <img name="consent-checkbox" class="checkbox-icon" onclick="bestill.consent_checkbox()" id="consent-checkbox" src="images/checkbox-unchecked.svg"/>
                 </div>
                 <p class="sammendrag-small-text">Prisen for alle rapportene blir:</p>
                 <div class="sammendrag-big-text" id="price-estimate-display">0 NOK</div>
                 <button onclick="order()" class="filled-button" style="border-radius: 15px;">
                     Bestill
                 </button>
-            </div>
+            </fieldset>
             <div class="info-right">
                 <img class="info-image" src="images/generic-image-5.svg" />
             </div>

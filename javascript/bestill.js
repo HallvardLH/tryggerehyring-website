@@ -157,11 +157,13 @@ const bestill = {
             styling = "style='background-color: var(--highlight-color)'";
         }
 
+        img_name = formatFileName(name);
+
         element = document.getElementById("tjenester-card-section");
         content = `
         <div class="checkbox-card" id="${name}-checkbox-card" ${styling}>
             <h3>${name}</h3>
-            <img class="checkbox-card-icon" src="images/search-icon.svg"/>
+            <img class="checkbox-card-icon" src="images/${img_name}.svg"/>
             <div class="checkbox-card-text">${description}</div>
             <img class="checkbox-icon" onclick="serviceCheckBox(null, '${name}')" id="${name}-checkbox" src="images/${checkImage}"/>
         </div>`
@@ -189,9 +191,12 @@ const bestill = {
         } else {
             checkbox = "checkbox-unchecked";
         }
+
+        img_name = formatFileName(name);
+
         content = `
         <div class="modal-service-option">
-            <img class="modal-service-icon" src="images/search-icon.svg"/>
+            <img class="modal-service-icon" src="images/${img_name}.svg"/>
             <div id="${name}">${name}</div>
             <img class="modal-checkbox" onclick="serviceCheckBox(${index}, '${name}')" id="${name}-modal-checkbox" src="images/${checkbox}.svg"/>
         </div>`

@@ -31,10 +31,8 @@
     box-shadow: var(--light-shadow);
 }
 
-.offer-icon {
-    /* Computes to var(--main-color) (#458FF6)
-       Coloring an svg is apparently not so easy */
-    filter: invert(46%) sepia(68%) saturate(730%) hue-rotate(182deg) brightness(101%) contrast(93%);
+.offer-icon, .checkbox-card-icon {
+    filter: var(--svg-main-color);
 }
 
 .card-text {

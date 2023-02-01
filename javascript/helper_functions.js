@@ -43,3 +43,13 @@ function validateEmail(email) {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
+
+function formatFileName(name) {
+    output = name;
+    // Replace æ and ø because the website seems to dislike them
+    if(name.includes("ø")) { output = name.replace("ø", "o")};
+    if(name.includes("æ")) { output = name.replace("æ", "e")};
+    if(name.includes(" ")) { output = name.replace(" ", "_")};
+
+    return output;
+}

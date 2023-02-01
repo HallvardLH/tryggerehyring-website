@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+.info-section fieldset {
+    border: none;
+}
+
 .info-section-no-img {
     grid-template-columns: 1fr 0.2fr;
 }
