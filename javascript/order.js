@@ -1,3 +1,5 @@
+let confirmation_code = null;
+
 function order() {
     if (!validateOrder()) {
         return;
@@ -5,7 +7,12 @@ function order() {
 
     // ADD CODE FOR DISPLAYING ORDER CONFIRMATION MODAL
 
+    confirmation_code = Math.floor(Math.random()*90000) + 10000;
+
     prepareAndSendEmail();
+
+    document.getElementById("order-confirmation-modal-text").textContent = `En bekreftelsese-post har blitt sendt til ${document.getElementById("summary-email-input").value}. Om du ønsker å legge til informasjon, kan du svare på denne e-posten eller ta kontakt via kontakt-skjemaet. Vennligst oppgi bestillingsnummeret ved framtidige hendvendelser:`
+    document.getElementById("confirmation-code").textContent = "#" + confirmation_code;
 
     openModal("order-confirmation-modal");
 }
