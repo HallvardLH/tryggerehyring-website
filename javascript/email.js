@@ -93,77 +93,66 @@ function prepareAndSendEmail() {
 
     let confirmation_body = `Hei ${document.getElementById("summary-name-input").value},
     <br><br>
-    Vi bekrefter å ha mottatt din bestilling. For spørsmål angående din ordre kan du sende e-post til <a href="mailto:support@tryggerehyring.no">support@tryggerehyring.no</a>. Vennligst oppgi ordrenummeret ditt i fremtidige henvendelser.. 
+    Vi bekrefter å ha mottatt din bestilling. For spørsmål angående din ordre kan du sende e-post til <a href="mailto:support@tryggerehyring.no">support@tryggerehyring.no</a>. Vennligst oppgi ordrenummeret ditt i fremtidige henvendelser.
     <br><br>
     Du vil motta en rapport per kandidat i løpet av få dager. 
     <br><br>
-    Faktura blir sendt ut i lag med rapporten med betalingsfrist 45 dager etter mottatt rapport. 
+    Faktura blir sendt sammen med rapporten med betalingsfrist 45 dager etter mottatt rapport. 
     <br><br>
-    <b><h4>Ordrenummer: #${confirmation_code}</h4></b>
+    <b><div style="font-size:20px">Ordrenummer: #${confirmation_code}</div></b>
     <br><br>
-    ${generateTable(theadDataSummary, tbodyDataSummary).outerHTML}
+    ${generateTable(theadDataSummary, tbodyDataSummary)}
     <br><br>
-    ${generateTable(theadDataPrice, tbodyDataPrice).outerHTML}
+    ${generateTable(theadDataPrice, tbodyDataPrice)}
     <br><br>
-    Med vennlig helsing,<br>
+    Med vennlig hilsen,<br>
     Sikkerhetsspesialistene i Tryggerehyring.no
     `
     console.log(confirmation_body);
 
     send(`${document.getElementById("summary-email-input").value}`, "support@tryggerehyring.no", `Ordrebekretelse for bakgrunnssjekk #${confirmation_code}`, confirmation_body);
+
+    document.getElementById("testid").innerHTML = confirmation_body;
 }
 
 const tableClass = "table";
 
 function generateTable(theadData, tbodyData) {
-    //increment
-    var t;
-    //create table with classlist
-    var table = document.createElement("table");
-    table.setAttribute("class", tableClass);
-    //create table head
-    var thead = document.createElement("thead");
-    //create table head table row
-    var theadTr = document.createElement("tr");
-    //Loop through the table head dataset provided
+    // Create a main string that contains the entire table element and the first table row
+    let tableHTML = `<table style="width: 80%; border-collapse: collapse;">
+    <tr style="text-align: left;">`
+
+    // For each table head data, create a table head element and insert data
+    // then add element to main string
     for (t = 1; t <= Object.keys(theadData).length; t++) {
-        //create table head > table row >  table data
-        var td = document.createElement("td");
-        //set inner text to be a single value from the loop
-        td.innerText = theadData[t][0];
-        //set class
-        td.setAttribute("class", theadData[t][1]);
-        //append each of the table data to the thead row
-        theadTr.appendChild(td);
+        tableHTML += `<th style="width: 25%; border: 1px solid black; padding: 10px">${theadData[t][0]}</th>`;
     }
-    //append thead row to thead
-    thead.appendChild(theadTr);
-    /**** TBODY ****/
-    var tbody = document.createElement("tbody");
-    //Init table body object
-    var tbodyTd = {};
-    //create table body table data
-    var td;
-    //loop through the table body dataset provided -> Number of records
+
+    // Close the table row element
+    tableHTML += "</tr>";
+
+    // loop through the table body dataset provided
     for (t = 1; t <= Object.keys(tbodyData).length; t++) {
-        //for each record, create a table row
-        var tbodyTr = document.createElement("tr");
-        //loop through the dataset again to create all table data that we need
+
+        let rowHTML = "";
+
+        // Create new table row element for each row
+        rowHTML += "<tr>";
+
+        // Loop through the dataset again to create all table data that we need
         for (var a = 0; a < Object.keys(tbodyData[t]).length; ++a) {
-            //add a new table data property to the table body object
-            tbodyTd[a] = document.createElement("td");
-            // set the inner text of the table data within our object
-            tbodyTd[a].innerText = tbodyData[t][a];
-            //append single table data to table row
-            tbodyTr.appendChild(tbodyTd[a]);
+            rowHTML += `<td style="border: 1px solid black; padding: 10px">${tbodyData[t][a]}</td>`
         }
-        //after table data set loop, to create the table data we need,
-        //append that data to table body table row    
-        tbody.appendChild(tbodyTr);
+
+        // Close the row element 
+        rowHTML += "</tr>";
+        
+        // Add newly created row to main string
+        tableHTML += rowHTML;
     }
-    //append table head to table
-    table.appendChild(thead);
-    //append table body to table
-    table.appendChild(tbody);
-    return table;
+
+    // Close the table element
+    tableHTML += "</table>";
+
+    return tableHTML
 }
