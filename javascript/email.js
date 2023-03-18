@@ -111,16 +111,13 @@ function prepareAndSendEmail() {
     console.log(confirmation_body);
 
     send(`${document.getElementById("summary-email-input").value}`, "support@tryggerehyring.no", `Ordrebekretelse for bakgrunnssjekk #${confirmation_code}`, confirmation_body);
-
-    document.getElementById("testid").innerHTML = confirmation_body;
 }
 
 const tableClass = "table";
 
 function generateTable(theadData, tbodyData) {
     // Create a main string that contains the entire table element and the first table row
-    let tableHTML = `<table style="width: 80%; border-collapse: collapse;">
-    <tr style="text-align: left;">`
+    let tableHTML = `<table style="width: 80%; border-collapse: collapse;"><tr style="text-align: left;">`
 
     // For each table head data, create a table head element and insert data
     // then add element to main string
@@ -134,6 +131,7 @@ function generateTable(theadData, tbodyData) {
     // loop through the table body dataset provided
     for (t = 1; t <= Object.keys(tbodyData).length; t++) {
 
+        // Create a string for individual row
         let rowHTML = "";
 
         // Create new table row element for each row
