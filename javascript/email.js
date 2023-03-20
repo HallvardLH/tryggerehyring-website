@@ -5,9 +5,9 @@
 /*const HOST = "smtp.elasticemail.com"
 const USERNAME = "bjellanda@gmail.com"
 const PASSWORD = "3BFBB42B4C7A4E04B95B783E9A1BEB3224AB"*/
-const HOST = "smtp.elasticemail.com"
+/*const HOST = "smtp.elasticemail.com"
 const USERNAME = "support+1@tryggerehyring.no"
-const PASSWORD = "4DFF8919BE053FB74D13FB3BEDCE77A41FD3"
+const PASSWORD = "4DFF8919BE053FB74D13FB3BEDCE77A41FD3"*/
 
 /**
  * Connects to the SMTP server and sends an email
@@ -19,9 +19,7 @@ const PASSWORD = "4DFF8919BE053FB74D13FB3BEDCE77A41FD3"
  */
 function send(to, from, subject, body, attachments) {
     Email.send({
-        Host : HOST,
-        Username : USERNAME,
-        Password : PASSWORD,
+        SecureToken : "b633b54b-7a03-4280-a5df-30dbe8d4c8a6",
         To : to,
         From : from,
         Subject : subject,
