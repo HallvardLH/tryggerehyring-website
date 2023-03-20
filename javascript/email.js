@@ -19,7 +19,7 @@ const PASSWORD = "4DFF8919BE053FB74D13FB3BEDCE77A41FD3"*/
  */
 function send(to, from, subject, body, attachments) {
     Email.send({
-        SecureToken : "b633b54b-7a03-4280-a5df-30dbe8d4c8a6",
+        SecureToken : "84b6fd09-5ea5-4fba-8072-e0644250c7a2",
         To : to,
         From : from,
         Subject : subject,
