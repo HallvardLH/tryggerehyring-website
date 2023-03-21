@@ -117,7 +117,7 @@ const tableClass = "table";
 
 function generateTable(theadData, tbodyData) {
     // Create a main string that contains the entire table element and the first table row
-    let tableHTML = `<table style="width: 80%; border-collapse: collapse;"><tr style="text-align: left;">`
+    let tableHTML = `<table style="width: 80%; border-collapse: collapse;"><tr style="text-align: left;">`;
 
     // For each table head data, create a table head element and insert data
     // then add element to main string
@@ -139,7 +139,7 @@ function generateTable(theadData, tbodyData) {
 
         // Loop through the dataset again to create all table data that we need
         for (var a = 0; a < Object.keys(tbodyData[t]).length; ++a) {
-            rowHTML += `<td style="border: 1px solid black; padding: 10px">${tbodyData[t][a]}</td>`
+            rowHTML += `<td style="border: 1px solid black; padding: 10px">${tbodyData[t][a]}</td>`;
         }
 
         // Close the row element 
