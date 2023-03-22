@@ -60,6 +60,10 @@ button {
     word-break: break-all;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .filled-button, .unfilled-button:hover {
     background-color: var(--main-color);
     border: none;

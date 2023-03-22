@@ -33,16 +33,16 @@ function send(to, from, subject, body, attachments) {
  * Prepares all info that the email should contain and calls the send function with said info
  */
 function prepareAndSendEmail() {
-    let attachments = []
-    let body = ""
+    let attachments = [];
+    let body = "";
 
     for (let i = 0; i < candidates.length; i++) {
         attachments = attachments.concat(candidates[i].attachments)
 
         body += `
-        ${candidates[i].name}<br>
-        ${candidates[i].information}<br>
-        ${candidates[i].services}<br>
+        ${candidates[i].name}<br />
+        ${candidates[i].information}<br />
+        ${candidates[i].services}<br />
         `
     }
 
@@ -61,12 +61,12 @@ function prepareAndSendEmail() {
         let attachments = "";
         for (let j = 0; j < candidates[i - 1].attachments.length; j++) {
             if (j >= candidates[i - 1].attachments.length - 1) {
-                attachments = candidates[i - 1].attachments[j].name
+                attachments = candidates[i - 1].attachments[j].name;
             } else {
-                attachments = candidates[i - 1].attachments[j].name + "; "
+                attachments = candidates[i - 1].attachments[j].name + "<br />";
             }
         }
-        tbodyDataSummary[i.toString()] = [candidates[i - 1].name, candidates[i - 1].information, attachments, candidates[i - 1].services.toString().replaceAll(",","; ")];
+        tbodyDataSummary[i.toString()] = [candidates[i - 1].name, candidates[i - 1].information, attachments, candidates[i - 1].services.toString().replaceAll(",",", ")];
     }
 
     let theadDataPrice = {
@@ -96,7 +96,7 @@ function prepareAndSendEmail() {
         }
     });
 
-    tbodyDataPrice[Object.keys(tbodyDataPrice).length + 1] = ["", "", "Total:", totalTotalPrice];
+    tbodyDataPrice[Object.keys(tbodyDataPrice).length + 1] = ["no_border", "", "Total:", totalTotalPrice];
 
     let confirmation_body = `Hei ${document.getElementById("summary-name-input").value},
     <br><br>
@@ -148,7 +148,15 @@ function generateTable(theadData, tbodyData) {
 
         // Loop through the dataset again to create all table data that we need
         for (var a = 0; a < Object.keys(tbodyData[t]).length; ++a) {
-            rowHTML += `<td style="border: 1px solid black; padding: 10px">${tbodyData[t][a]}</td>`;
+            let style = "border: 1px solid black; padding: 10px";
+            let data = tbodyData[t][a];
+            if(tbodyData[t][0] == "no_border") {
+                style = "padding: 10px";
+            }
+            if(tbodyData[t][a] == "no_border") {
+                data = "";
+            }
+            rowHTML += `<td style="${style}">${data}</td>`;
         }
 
         // Close the row element 
