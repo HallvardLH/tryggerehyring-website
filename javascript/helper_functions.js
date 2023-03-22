@@ -53,5 +53,7 @@ function formatFileName(name) {
     // Replace spaces with underscores
     if(name.includes(" ")) { output = name.replace(" ", "_")};
 
+    name = name.toLowerCase();
+
     return output;
 }
