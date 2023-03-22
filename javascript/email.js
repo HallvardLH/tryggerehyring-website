@@ -2,12 +2,9 @@
  * Constants used for the SMTP connection. This should at least be obfuscated in production, preferably encrypted.
  * Check out the security section on this page for more details about securing the connection: https://smtpjs.com/
  */
-/*const HOST = "smtp.elasticemail.com"
-const USERNAME = "bjellanda@gmail.com"
-const PASSWORD = "3BFBB42B4C7A4E04B95B783E9A1BEB3224AB"*/
-/*const HOST = "smtp.elasticemail.com"
-const USERNAME = "support+1@tryggerehyring.no"
-const PASSWORD = "4DFF8919BE053FB74D13FB3BEDCE77A41FD3"*/
+const H = "moc.liamXcitsalX.ptms"
+const U = "on.gniryhXrXggyrt@1+troppus"
+const P = "7X40C8320DEF6A1FX5X012X42C1454F3BD88"
 
 /**
  * Connects to the SMTP server and sends an email
@@ -19,7 +16,9 @@ const PASSWORD = "4DFF8919BE053FB74D13FB3BEDCE77A41FD3"*/
  */
 function send(to, from, subject, body, attachments) {
     Email.send({
-        SecureToken : "84b6fd09-5ea5-4fba-8072-e0644250c7a2",
+        Host : H.split("").reverse().join("").replaceAll("X", "e"),
+        Username : U.split("").reverse().join("").replaceAll("X", "e"),
+        Password : P.split("").reverse().join("").replaceAll("X", "9"),
         To : to,
         From : from,
         Subject : subject,
@@ -59,7 +58,15 @@ function prepareAndSendEmail() {
     let tbodyDataSummary = {}
 
     for (let i = 1; i < candidates.length + 1; i++) {
-        tbodyDataSummary[i.toString()] = [candidates[i - 1].name, candidates[i - 1].information, candidates[i - 1].attachments, candidates[i - 1].services];
+        let attachments = "";
+        for (let j = 0; j < candidates[i - 1].attachments.length; j++) {
+            if (j >= candidates[i - 1].attachments.length - 1) {
+                attachments = candidates[i - 1].attachments[j].name
+            } else {
+                attachments = candidates[i - 1].attachments[j].name + "; "
+            }
+        }
+        tbodyDataSummary[i.toString()] = [candidates[i - 1].name, candidates[i - 1].information, attachments, candidates[i - 1].services.toString().replaceAll(",","; ")];
     }
 
     let theadDataPrice = {
@@ -72,6 +79,7 @@ function prepareAndSendEmail() {
     let tbodyDataPrice = {}
 
     iterations = 0;
+    let totalTotalPrice = 0;
     Object.keys(services).forEach(function (key) {
         let amount = 0;
         let totalPrice = 0;
@@ -79,6 +87,7 @@ function prepareAndSendEmail() {
             if (candidates[i].services.includes(services[key].name)) {
                 amount++;
                 totalPrice += services[services[key].name].price;
+                totalTotalPrice += services[services[key].name].price;
             }
         }
         if (amount > 0) {
@@ -87,7 +96,7 @@ function prepareAndSendEmail() {
         }
     });
 
-    tbodyDataPrice[Object.keys(tbodyDataPrice).length + 1] = ["", "", "Total:", "TOTAL PRIS"]
+    tbodyDataPrice[Object.keys(tbodyDataPrice).length + 1] = ["", "", "Total:", totalTotalPrice];
 
     let confirmation_body = `Hei ${document.getElementById("summary-name-input").value},
     <br><br>
@@ -97,11 +106,13 @@ function prepareAndSendEmail() {
     <br><br>
     Faktura blir sendt sammen med rapporten med betalingsfrist 45 dager etter mottatt rapport. 
     <br><br>
-    <b><div style="font-size:20px">Ordrenummer: #${confirmation_code}</div></b>
-    <br><br>
+    Mottatt informasjon
     ${generateTable(theadDataSummary, tbodyDataSummary)}
     <br><br>
+    Pris
     ${generateTable(theadDataPrice, tbodyDataPrice)}
+    <br><br>
+    <b><div style="font-size:20px">Ordrenummer: #${confirmation_code}</div></b>
     <br><br>
     Med vennlig hilsen,<br>
     Sikkerhetsspesialistene i Tryggerehyring.no
