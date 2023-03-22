@@ -181,6 +181,8 @@
         resize: vertical;
         width: 90%;
         font-size: 0.95rem;
+        height: 100px;
+        padding: 0;
     }
 
     .kandidat-name-input:focus, .kandidat-info-input:focus, .sammendrag-input:focus {

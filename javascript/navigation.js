@@ -36,6 +36,10 @@ window.onscroll = function() {
  * Which is determined by a CSS media query
  * That changes its accent-color style
  * When the screen is smaller than 700px
+ * Note: does not actually check whether
+ * the user is on mobile or desktop,
+ * only the width of the screen
+ * which is sufficient for the given usecase
  * @returns boolean
  */
 function isMobile() {
