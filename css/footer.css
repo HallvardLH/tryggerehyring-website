@@ -1,11 +1,14 @@
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 200px 100px 100px;
+footer {
     background-image: linear-gradient(rgba(103, 195, 243, 1), rgba(90, 152, 242, 1));
     color: white;
-    /* margin-top: 200px; */
+}
+
+.footer-container {
     line-height: 2;
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 50px 100px 100px 100px;
+    box-sizing: border-box;
 }
 
 .footer-link, .footer-text {

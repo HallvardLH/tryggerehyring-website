@@ -48,12 +48,12 @@
 
 .table-top {
     background-color: var(--highlight-color);
-    padding: 10px;
+    padding: 16px;
 }
 
 .order-table-content {
     border-bottom: solid var(--main-color) 2px;
-    padding: 10px;
+    padding: 16px;
     line-height: 1.8;
     min-height: 80px;
     /* background-color: white; */

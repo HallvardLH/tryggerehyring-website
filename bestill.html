@@ -13,6 +13,7 @@
     <link href="css/bestill.css" rel="stylesheet" type="text/css">
     <link href="css/modal.css" rel="stylesheet" type="text/css">
     <link href="css/footer.css" rel="stylesheet" type="text/css">
+    <link href="css/tjenester.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="content-container">
@@ -82,7 +83,7 @@
             <div class="separator"></div>
             <div class="order-table table-desktop" style="grid-template-columns: 150px repeat(4, 1fr);" id="kandidat-table-desktop">
                     <div class="table-top" style="border-top-left-radius: 25px"><b>Navn*</b></div>
-                    <div class="table-top"><b>Ytterlig informasjon</b></div>
+                    <div class="table-top"><b>Annen informasjon</b></div>
                     <div class="table-top"><b>Dokument</b></div>
                     <div class="table-top"><b>Tjenester</b></div>
                     <div class="table-top" style="border-top-right-radius: 25px"><b>Fjern kandidat</b></div>
@@ -155,47 +156,49 @@
         </div>
     </div>
 
-    <footer class="footer-container">
-        <div class="footer-logo-mobile">
-            <div class="logo footer-logo">
-                <img class="logo-img" src="images/logo-white.svg" />
-                <div class="logo-text">Tryggerehyring.no</div>
-            </div>
-            <a href class="footer-link">support@tryggerehyring.no</a>
-        </div>
-        <div class="footer-contents">
-            <div class="footer-logo-desktop">
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-mobile">
                 <div class="logo footer-logo">
                     <img class="logo-img" src="images/logo-white.svg" />
                     <div class="logo-text">Tryggerehyring.no</div>
                 </div>
                 <a href class="footer-link">support@tryggerehyring.no</a>
             </div>
-            <div>
-                <div class="footer-title">Bedrift</div>
-                <a href="om-oss.html" class="footer-link">Om oss</a><br />
-                <a href="bestill.html" class="footer-link">Bestill</a>
+            <div class="footer-contents">
+                <div class="footer-logo-desktop">
+                    <div class="logo footer-logo">
+                        <img class="logo-img" src="images/logo-white.svg" />
+                        <div class="logo-text">Tryggerehyring.no</div>
+                    </div>
+                    <a href class="footer-link">support@tryggerehyring.no</a>
+                </div>
+                <div>
+                    <div class="footer-title">Bedrift</div>
+                    <a href="om-oss.html" class="footer-link">Om oss</a><br />
+                    <a href="bestill.html" class="footer-link">Bestill</a>
+                </div>
+                <div>
+                    <div class="footer-title">Hjelp</div>
+                    <a href="hjelp.html" class="footer-link">Hjelpesenter</a><br />
+                    <a href="kontakt.html" class="footer-link">Kontakt oss</a>
+                </div>
             </div>
-            <div>
-                <div class="footer-title">Hjelp</div>
-                <a href="hjelp.html" class="footer-link">Hjelpesenter</a><br />
-                <a href="kontakt.html" class="footer-link">Kontakt oss</a>
+            <div style="margin-top: 20px">
+                <!-- Start of HubSpot code snippet -->
+                <div class="cookie-button" id="hs_show_banner_button"
+                onClick="(function(){
+                var _hsp = window._hsp = window._hsp || [];
+                _hsp.push(['showBanner']);
+                })()"
+                >
+                    Endre cookie-instillinger
+                </div>
+                <!-- End of HubSpot code snippet -->
             </div>
-        </div>
-        <div style="margin-top: 20px">
-            <!-- Start of HubSpot code snippet -->
-            <div class="cookie-button" id="hs_show_banner_button"
-            onClick="(function(){
-            var _hsp = window._hsp = window._hsp || [];
-            _hsp.push(['showBanner']);
-            })()"
-            >
-                Endre cookie-instillinger
+            <div style="margin-top: 20px">
+                ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt.
             </div>
-            <!-- End of HubSpot code snippet -->
-        </div>
-        <div style="margin-top: 20px">
-            ©Tryggerehyring AS 2023. Alle rettigheter forbeholdt.
         </div>
     </footer>
 

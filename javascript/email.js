@@ -50,7 +50,7 @@ function prepareAndSendEmail() {
 
     let theadDataSummary = {
         "1": ["Navn", "text-danger"],
-        "2": ["Ytterlig informasjon", "text-danger"],
+        "2": ["Annen informasjon", "text-danger"],
         "3": ["Dokument", "text-danger"],
         "4": ["Tjenester", "text-danger"]
     }

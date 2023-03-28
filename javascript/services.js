@@ -208,8 +208,8 @@ function buildServices(name, description) {
 
         content = `
         <div class="display-card">
-            <h2>${name}</h2>
-            <div class="display-subtitle">${price}</div>
+            <h2 style="margin-bottom: 0">${name}</h2>
+            <div class="display-subtitle">NOK ${price}</div>
             <div class="info-text">${description}</div>
         </div>`
 
