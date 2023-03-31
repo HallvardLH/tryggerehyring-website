@@ -3,7 +3,7 @@ let services = {
         name: "Arbeid",
         description: "Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold, attester, m.m.",
         description_long: "Vi verifiserer CV-er ved å sjekke tidligere ansettelser, kontraktsforhold og attester. I praksis vil det si at vi går gjennom CV-en til en kandidat og sjekker at infoen relatert til alle oppgitte ansettelser og kontraktsforhold er korrekt. Det inkluderer stillingstitler, arbeidsoppgaver, dato for arbeidsforholdet, og all anna informasjon vi kan verifisere.",
-        price: 2000,
+        price: 1000,
         default: true
     },
     Utdanning: {
@@ -17,7 +17,7 @@ let services = {
         name: "Mediesøk",
         description: "Vi undersøker sosiale medier og andre offentlige databaser",
         description_long: "Vi undersøker sosiale medier og andre offentlige databaser. Det vil si at vi går gjennom alt kandidaten har lagt ut på nett. Om vi finner noe som kan være problematisk for arbeidsforhold, inkluderer vi det i rapporten. Hva som er problematisk varierer avhengig av rollen.",
-        price: 2500,
+        price: 2000,
         default: true
     },
     Sertifikat: {
@@ -31,7 +31,7 @@ let services = {
         name: "Referansekontroll",
         description: "Vi dobbeltsjekker at referansene er ekte, og vi kan gjennomføre referanseintervju",
         description_long: "Vi følger opp referanser og holder referanseintervju. I intervjuene spør vi spørsmål som hvilken relasjon vedkommende har til kandidaten, hva slags stilling kandidaten hadde, hvordan arbeidsopgavene ble utført, osv. Vi lager et referat for intervjuet.",
-        price: 500,
+        price: 2000,
         default: false
     },
     Identitet: {
