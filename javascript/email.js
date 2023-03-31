@@ -50,7 +50,7 @@ function prepareAndSendEmail() {
 
     let theadDataSummary = {
         "1": ["Navn", "text-danger"],
-        "2": ["Ytterlig informasjon", "text-danger"],
+        "2": ["Annen informasjon", "text-danger"],
         "3": ["Dokument", "text-danger"],
         "4": ["Tjenester", "text-danger"]
     }
@@ -100,16 +100,16 @@ function prepareAndSendEmail() {
 
     let confirmation_body = `Hei ${document.getElementById("summary-name-input").value},
     <br><br>
-    Vi bekrefter å ha mottatt din bestilling. For spørsmål angående din ordre kan du sende e-post til <a href="mailto:support@tryggerehyring.no">support@tryggerehyring.no</a>. Vennligst oppgi ordrenummeret ditt i fremtidige henvendelser.
+    Vi bekrefter å ha mottatt din bestilling. Dersom du har spørsmål angående ordren din, kan du sende en e-post til <a href="mailto:support@tryggerehyring.no">support@tryggerehyring.no</a>. Vennligst oppgi ordrenummeret ditt i fremtidige henvendelser.
     <br><br>
-    Du vil motta en rapport per kandidat i løpet av få dager. 
+    Du vil motta en rapport per kandidat i løpet av de kommende dagene.
     <br><br>
-    Faktura blir sendt sammen med rapporten med betalingsfrist 45 dager etter mottatt rapport. 
+    Faktura vil bli sendt sammen med rapporten og betalingsfristen er satt til 45 dager etter mottatt rapport.
     <br><br>
-    Mottatt informasjon
+    Innhentet informasjon:
     ${generateTable(theadDataSummary, tbodyDataSummary)}
     <br><br>
-    Pris
+    Pris:
     ${generateTable(theadDataPrice, tbodyDataPrice)}
     <br><br>
     <b><div style="font-size:20px">Ordrenummer: #${confirmation_code}</div></b>

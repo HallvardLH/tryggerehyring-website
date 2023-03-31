@@ -34,9 +34,9 @@ const bestill = {
                     <input class="kandidat-name-input mobile-name-input" id="kandidat-name-input-${index}" type="text" oninput="bestill.onchange_name(${index})" value="${candidates[index].name}" placeholder="Kandidatens nav*"/>
                 </div>
                 <div class="mobile-table-row">
-                    <div class="mobile-table-name">Ytterlig informasjon</div>
+                    <div class="mobile-table-name">Annen informasjon</div>
                     <div class="mobile-table-content">
-                        <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
+                        <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input" type="text" placeholder="Legg til annen informasjon">${candidates[index].information}</textarea>
                     </div>
                 </div>
                 <div class="mobile-table-row">
@@ -76,7 +76,7 @@ const bestill = {
             <div id="kandidat-table-cell-0-${index}" class="order-table-content">
                 <input class="kandidat-name-input" id="kandidat-name-input-${index}" type="text" oninput="bestill.onchange_name(${index})" value="${candidates[index].name}" placeholder="Skriv inn navn"/>
             </div>
-            <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input order-table-content" type="text" placeholder="Skriv inn ytterlig informasjon">${candidates[index].information}</textarea>
+            <textarea id="kandidat-table-cell-1-${index}" oninput="bestill.onchange_info(${index})" class="kandidat-info-input order-table-content" type="text" placeholder="Skriv inn annen informasjon">${candidates[index].information}</textarea>
             <div id="kandidat-table-cell-2-${index}" class="order-table-content">
                 <div class="upload-document-grid">
                     ${attachments}
@@ -135,7 +135,7 @@ const bestill = {
         }
     },
 
-    create_serivce: function(name, description, show_default) {
+    create_serivce: function(name, description, price, show_default) {
         let included = 0
         for (let i = 0; i < candidates.length; i++) {
             if (candidates[i].services.includes(name)) {
@@ -162,7 +162,10 @@ const bestill = {
         element = document.getElementById("tjenester-card-section");
         content = `
         <div class="checkbox-card" id="${name}-checkbox-card" ${styling}>
-            <h3>${name}</h3>
+            <div>
+                <h3 style="margin-bottom: 0">${name}</h3>
+                <div class="display-subtitle">NOK ${price}</div>
+            </div>
             <img class="checkbox-card-icon" src="images/${img_name}.svg"/>
             <div class="checkbox-card-text">${description}</div>
             <img class="checkbox-icon" onclick="serviceCheckBox(null, '${name}')" id="${name}-checkbox" src="images/${checkImage}"/>
@@ -173,7 +176,7 @@ const bestill = {
 
     create_all_services: function() {
         Object.keys(services).forEach(function(key) {
-            bestill.create_serivce(services[key].name, services[key].description, services[key].default);
+            bestill.create_serivce(services[key].name, services[key].description, services[key].price, services[key].default);
         });
     },
 

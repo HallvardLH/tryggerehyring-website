@@ -45,15 +45,14 @@ function validateEmail(email) {
 };
 
 function formatFileName(name) {
-    output = name;
     // Replace ø, æ and å because the website seems to dislike them
-    if(name.includes("ø")) { output = name.replace("ø", "o")};
-    if(name.includes("æ")) { output = name.replace("æ", "e")};
-    if(name.includes("å")) { output = name.replace("å", "a")};
+    if(name.includes("ø")) { name = name.replace("ø", "o")};
+    if(name.includes("æ")) { name = name.replace("æ", "e")};
+    if(name.includes("å")) { name = name.replace("å", "a")};
     // Replace spaces with underscores
-    if(name.includes(" ")) { output = name.replace(" ", "_")};
+    if(name.includes(" ")) { name = name.replace(" ", "_")};
 
-    output = output.toLowerCase();
+    name = name.toLowerCase();
 
-    return output;
+    return name;
 }

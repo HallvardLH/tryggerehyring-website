@@ -9,7 +9,7 @@ let services = {
     Utdanning: {
         name: "Utdanning",
         description: "Vi kan verifisere grader, vintemål og karakterutskrifter",
-        description_long: "Vi kan verifisere grader, vintemål og karakterutskrifter. For grader verifiserer vi at graden er oppnådd og hvilken institusjon som utstedte graden. På grunn av personvern krever verifisering av vitnemål en fullmakt fra vedkommenende. Den etterspør vi fra kandidaten når bestillingen er bekreftet.",
+        description_long: "Vi kan verifisere grader, vitnemål og karakterutskrifter. For grader verifiserer vi at graden er oppnådd og hvilken institusjon som utstedte graden. På grunn av personvern krever verifisering av vitnemål en fullmakt fra vedkommenende. Den etterspør vi fra kandidaten når bestillingen er bekreftet.",
         price: 1000,
         default: true
     },
@@ -44,7 +44,7 @@ let services = {
     Næringsinteresser: {
         name: "Næringsinteresser",
         description: "Vi finner roller og eierskap i norske og utelandske bedrifter",
-        description_long: "Vi finner roller og eierskap i norske og utelandske bedrifter. Med roller og eierskap mener vi roller som daglig leder, styreleder, styremedlem, osv. Vi lager en oversikt over rollene og bedriftene som er tilknyttet kandidaten.",
+        description_long: "Vi finner roller og eierskap i norske og utenlandske bedrifter. Med roller og eierskap mener vi roller som daglig leder, styreleder, styremedlem, osv. Vi lager en oversikt over rollene og bedriftene som er tilknyttet kandidaten.",
         price: 500,
         default: false
     },
@@ -208,8 +208,8 @@ function buildServices(name, description) {
 
         content = `
         <div class="display-card">
-            <h2>${name}</h2>
-            <div class="display-subtitle">${price}</div>
+            <h2 style="margin-bottom: 0">${name}</h2>
+            <div class="display-subtitle">NOK ${price}</div>
             <div class="info-text">${description}</div>
         </div>`
 
