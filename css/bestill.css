@@ -32,11 +32,12 @@
     width: 36px;
     height: 36px;
     align-self: flex-end;
+    cursor: pointer;
 }
 
 .checkbox-card-text {
     line-height: 1.5;
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 .order-table {
